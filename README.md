@@ -99,3 +99,18 @@ Ride sharing app service for Bangladesh
 **Role:** Develop & maintain android app, work with google map & google location api
 
 [![EVTravcker](https://lh3.googleusercontent.com/WT3YWf8tspGnVUJhFdSuKZE_ZEWEgA144bKLrkchJBK7bJhDvjIJGTlhOVRAVlyua3ri=s180)](https://fahim44.github.io/EVTravcker/ "EVTravcker")
+
+.
+
+Genius or Bimbo
+--------------- 
+
+Android chatting app for Malaysian people
+
+**Platform:** Android
+
+**Development Tool:** Android Studio
+
+**Role:** Develop & maintain android app
+
+[![Genius or Bimbo](https://lh3.googleusercontent.com/7nK70Ium4PJCGhTk1Q2AdcZDv5wDUs7QxZ4jqbtp8TwPDG_1ddOLBpwY06yQozRDdf8=s180)](https://play.google.com/store/apps/details?id=com.cheesecake.fahim.geniusorbimbo "Genius or Bimbo")
