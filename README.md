@@ -14,7 +14,7 @@ I am a Software Engineer from Bangladesh. I have worked on Android App Developme
 JetPack Jones
 -------------
 
-Simple android flappy Bird clone game.
+Simple android game.
 
 **Platform:** Android
 
@@ -22,7 +22,7 @@ Simple android flappy Bird clone game.
 
 **Role:** Develop main game machanic
 
-[![JetPack Jones](https://lh3.googleusercontent.com/MRYE_0RFtCfx1afO9N1yWfcQf-e0MIMBsBclKUExb_oYKwmk2bq1z3SM_8993rgHyA=s180)](https://fahim44.github.io/JetPack-Jones/ "Simple android flappy Bird clone game")
+[![JetPack Jones](https://lh3.googleusercontent.com/MRYE_0RFtCfx1afO9N1yWfcQf-e0MIMBsBclKUExb_oYKwmk2bq1z3SM_8993rgHyA=s180)](https://play.google.com/store/apps/details?id=com.evwwa.JetPackJones "JetPack Jones")
 
 .
 
@@ -37,7 +37,7 @@ Simple android top down shooter game.
 
 **Role:** Develop game & design 3d models
 
-[![Shoot 'Em Down](https://lh3.googleusercontent.com/l6oSPBvh4h2sBjonT78oMneQ3SZrmfsBkz1JfCsYn9b_X53O1f_Pacm7cbIN63ShSupV=s180)](https://fahim44.github.io/Shoot-em-down/ "Simple android top down shooter game")
+[![Shoot 'Em Down](https://lh3.googleusercontent.com/l6oSPBvh4h2sBjonT78oMneQ3SZrmfsBkz1JfCsYn9b_X53O1f_Pacm7cbIN63ShSupV=s180)](https://play.google.com/store/apps/details?id=com.astro_monkey.shoot_em_down "Shoot 'Em Down")
 
 .
 
@@ -98,7 +98,7 @@ Ride sharing app service for Bangladesh
 
 **Role:** Develop & maintain android app, work with google map & google location api
 
-[![EVTravcker](https://lh3.googleusercontent.com/WT3YWf8tspGnVUJhFdSuKZE_ZEWEgA144bKLrkchJBK7bJhDvjIJGTlhOVRAVlyua3ri=s180)](https://fahim44.github.io/EVTravcker/ "EVTravcker")
+[![EVTravcker](https://lh3.googleusercontent.com/WT3YWf8tspGnVUJhFdSuKZE_ZEWEgA144bKLrkchJBK7bJhDvjIJGTlhOVRAVlyua3ri=s180)](https://play.google.com/store/apps/details?id=com.evwwa.evtracker "EVTravcker")
 
 .
 
