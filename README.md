@@ -105,7 +105,7 @@ Ride sharing app service for Bangladesh
 Genius or Bimbo
 --------------- 
 
-Android chatting app for Malaysian people
+Android simple multiple choice quize app
 
 **Platform:** Android
 
@@ -114,3 +114,18 @@ Android chatting app for Malaysian people
 **Role:** Develop & maintain android app
 
 [![Genius or Bimbo](https://lh3.googleusercontent.com/7nK70Ium4PJCGhTk1Q2AdcZDv5wDUs7QxZ4jqbtp8TwPDG_1ddOLBpwY06yQozRDdf8=s180)](https://play.google.com/store/apps/details?id=com.cheesecake.fahim.geniusorbimbo "Genius or Bimbo")
+
+.
+
+Employee 360 Peer Reviews
+-------------------------
+
+Android office & productivity app
+
+**Platform:** Android
+
+**Development Tool:** Android Studio
+
+**Role:** maintain android app
+
+[![Employee 360 Peer Reviews](https://lh3.googleusercontent.com/kiLOtoLcAaCtjh8mj9yluh8HsbN1eS6uBf5b7OzfrIsaovA8jWCJIq-wgfA41chS5A=s180)](https://play.google.com/store/apps/details?id=com.foovii.apraise "Employee 360 Peer Reviews")
