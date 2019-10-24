@@ -2,8 +2,17 @@
 
 I am a Software Engineer from Bangladesh. I have worked on Android App Development, Danjo Web App Development, Game Development with Unity3d & Godot Game Engine. I have also experience with Game Engine Development with OpenGL api.
 
-
-[![stackoverflow](https://i.postimg.cc/FHgDnGVy/stackoverflow.png)](https://stackoverflow.com/users/2768706/fahim-salam-chowdhury "stackoverflow")
+<a href="mailto:fahim.cse11@gmail.com"> <img src="https://i.postimg.cc/L4LfT5Tf/600px-Gmail-Icon-svg.png" alt="gmail"></a>
+. .
+[![linkedIn](https://i.postimg.cc/nV2dk3Tq/027-linkedin.png)](https://www.linkedin.com/in/fahim-salam-chowdhury-73872b111/ "linkedIn")
+. .
+[![skype](https://i.postimg.cc/y62w9QNn/015-skype.png)](https://join.skype.com/invite/cneoIHb0cmLx "skype")
+. .
+[![stackoverflow](https://i.postimg.cc/02ZLz8LR/so-icon.png)](https://stackoverflow.com/users/2768706/fahim-salam-chowdhury "stackoverflow")
+. .
+[![hackerrank](https://i.postimg.cc/SxSVzCcD/hackerrank.jpg)](https://www.hackerrank.com/fahim_cse11 "hackerrank")
+. .
+[![github](https://i.postimg.cc/Vs9jB5fT/github.png)](https://github.com/fahim44 "github")
 
 .
 
@@ -146,3 +155,18 @@ Android office & productivity app
 **Role:** maintain android app
 
 [![Employee 360 Peer Reviews](https://lh3.googleusercontent.com/kiLOtoLcAaCtjh8mj9yluh8HsbN1eS6uBf5b7OzfrIsaovA8jWCJIq-wgfA41chS5A=s180)](https://play.google.com/store/apps/details?id=com.foovii.apraise "Employee 360 Peer Reviews")
+
+.
+
+aiai dating 愛愛愛交友站 -Find new friends,chat & date
+----------------------------------------------------- 
+
+Android chatting app for Chinese people
+
+**Platform:** Android
+
+**Development Tool:** Android Studio
+
+**Role:** Develop & maintain android app, intregate firebase in app, intregate in-app purchase system in app
+
+[![aiai dating 愛愛愛交友站 -Find new friends,chat & date](https://lh3.googleusercontent.com/o1Iiy1FbZDlbozrfrmpqoxt7YSGQ7D9IovQ6Ru9Br866sb5C_pG-Q-7hD4b4-js_qg=s180)](https://play.google.com/store/apps/details?id=com.frenclub.ai_aiDating "aiai dating 愛愛愛交友站 -Find new friends,chat & date")
