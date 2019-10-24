@@ -37,6 +37,21 @@ Android chatting app for Indonashian people
 
 .
 
+Carbangla Drive
+---------------
+
+Ride sharing app service for Bangladesh
+
+**Platform:** Android
+
+**Development Tool:** Android Studio
+
+**Role:** Develop & maintain android app, work with google map & google location api
+
+[![Carbangla Drive](https://lh3.googleusercontent.com/JS_wKLqj34uOOh2ncjc-67HR6E76ZnYs2AxEyJiCe9vlNzObxkKX_DJz4XljVo4P-E4=s180)](https://play.google.com/store/apps/details?id=com.carbangla.drive "Carbangla Drive")
+
+.
+
 JetPack Jones
 -------------
 
@@ -98,20 +113,6 @@ Android chatting app for Malaysian people
 
 .
 
-Carbangla Drive
----------------
-
-Ride sharing app service for Bangladesh
-
-**Platform:** Android
-
-**Development Tool:** Android Studio
-
-**Role:** Develop & maintain android app, work with google map & google location api
-
-[![Carbangla Drive](https://lh3.googleusercontent.com/JS_wKLqj34uOOh2ncjc-67HR6E76ZnYs2AxEyJiCe9vlNzObxkKX_DJz4XljVo4P-E4=s180)](https://play.google.com/store/apps/details?id=com.carbangla.drive "Carbangla Drive")
-
-.
 
 EVTravcker
 -----------
