@@ -16,9 +16,9 @@ Simple android flappy Bird clone game.
 
 **Development Tool:** Unity3d Game Engine
 
+**Role:** Develop main game machanic
+
 [![JetPack Jones](https://lh3.googleusercontent.com/MRYE_0RFtCfx1afO9N1yWfcQf-e0MIMBsBclKUExb_oYKwmk2bq1z3SM_8993rgHyA=s180)](https://fahim44.github.io/JetPack-Jones/ "Simple android flappy Bird clone game")
-
-
 
 
 
@@ -31,4 +31,22 @@ Simple android top down shooter game.
 
 **Development Tool:** Unity3d Game Engine, Blender
 
+**Role:** Develop game & design 3d models
+
 [![Shoot 'Em Down](https://lh3.googleusercontent.com/l6oSPBvh4h2sBjonT78oMneQ3SZrmfsBkz1JfCsYn9b_X53O1f_Pacm7cbIN63ShSupV=s180)](https://fahim44.github.io/Shoot-em-down/ "Simple android top down shooter game")
+
+
+
+
+BD Got Talent
+-------------
+
+Web App to hunt down young Bangladeshi talents
+
+**Platform:** Web
+
+**Development Tool:** Django Web Framework
+
+**Role:** Develop and maintain backend side.
+
+[![BD Got Talent](https://i.postimg.cc/mDwyrnJV/Logo2.png)](https://www.bdgottalent.com/ "BDGotTalent")
