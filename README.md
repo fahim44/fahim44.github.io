@@ -117,7 +117,7 @@ Android chatting app for Malaysian people
 EVTravcker
 -----------
 
-Ride sharing app service for Bangladesh
+1to1 tracking app
 
 **Platform:** Android
 
