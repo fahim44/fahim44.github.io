@@ -1,6 +1,6 @@
 # Fahim Salam Chowdhury
 
-I am a Software Engineer from Bangladesh. I have worked on Android App Development, Danjo Web App Development, Game Development with Unity3d & Godot Game Engine. I have also experience with Game Engine Development with OpenGL api.
+Empirical software engineer with 3 years of experience developing mobile applications, game applications, web applications for both small and high volume businesses. Played a vital role in development of both business and technical arena and achieved a significant boost for few companies. An enthusiastic team player with quick learning ability.
 
 <a href="mailto:fahim.cse11@gmail.com"> <img src="https://i.postimg.cc/L4LfT5Tf/600px-Gmail-Icon-svg.png" alt="gmail"></a>
 . .
