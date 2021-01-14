@@ -9,6 +9,145 @@
         <atom:link href="https://fahim44.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>mysql in docker</title>
+            <link>https://fahim44.github.io/posts/2021/01/mysql-in-docker/</link>
+            <pubDate>Thu, 14 Jan 2021 21:55:03 +0600</pubDate>
+            
+            <guid>https://fahim44.github.io/posts/2021/01/mysql-in-docker/</guid>
+            <description>In this post, we will discuss how to setup &amp;amp; run mysql using docker
+Goal We want to setup mysql using docker, but also want to provide our custom configurations for mysql and save mysql data into our machine. The reason of choosing docker over direct mysql installation into the machine is, we want to switch between mysql hosting machines with ease &amp;amp; start-stop mysql into our macine easily.
+Prerequisite Docker &amp;amp; Docker-compose should already be setup into your machine beforehand.</description>
+            <content type="html"><![CDATA[<p>In this post, we will discuss how to setup &amp; run <em>mysql</em> using <em>docker</em></p>
+<h2 id="goal">Goal</h2>
+<p>We want to setup <em>mysql</em> using <em>docker</em>, but also want to provide our custom configurations for mysql and save mysql data into our machine.
+The reason of choosing docker over direct mysql installation into the machine is, we want to switch between mysql hosting machines with ease &amp; start-stop mysql into our macine easily.</p>
+<h2 id="prerequisite">Prerequisite</h2>
+<p><a href="https://www.docker.com/">Docker</a> &amp; <a href="https://docs.docker.com/compose/">Docker-compose</a> should already be setup into your machine beforehand.</p>
+<h2 id="config--data-directory">config &amp; data directory</h2>
+<p>First create two empty directories into your machine, anywhere you want with any name.
+One for <em>mysql-config</em>, to store mysql configuration file.
+Another for <em>mysql-data</em>, to persist database&rsquo;s data.</p>
+<p>Into the <em>mysql-config</em> directory, create <code>config-file.cnf</code> file with following configurations</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#</span>
+<span style="color:#75715e"># The MySQL database server configuration file.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># One can use all long options that the program supports.</span>
+<span style="color:#75715e"># Run program with --help to get a list of available options and with</span>
+<span style="color:#75715e"># --print-defaults to see which it would actually understand and use.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># For explanations see</span>
+<span style="color:#75715e"># http://dev.mysql.com/doc/mysql/en/server-system-variables.html</span>
+
+<span style="color:#75715e"># Here is entries for some specific programs</span>
+<span style="color:#75715e"># The following values assume you have at least 32M ram</span>
+
+<span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># * Basic Settings</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#user		= mysql</span>
+<span style="color:#75715e"># pid-file	= /var/run/mysqld/mysqld.pid</span>
+<span style="color:#75715e"># socket	= /var/run/mysqld/mysqld.sock</span>
+<span style="color:#75715e"># port		= 3306</span>
+<span style="color:#75715e"># datadir	= /var/lib/mysql</span>
+
+
+<span style="color:#75715e"># If MySQL is running as a replication slave, this should be</span>
+<span style="color:#75715e"># changed. Ref https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmpdir</span>
+<span style="color:#75715e"># tmpdir		= /tmp</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># Instead of skip-networking the default is now to listen only on</span>
+<span style="color:#75715e"># localhost which is more compatible and is not less secure.</span>
+<span style="color:#75715e">#bind-address		= 127.0.0.1</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># * Fine Tuning</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#key_buffer_size		= 16M</span>
+<span style="color:#75715e"># max_allowed_packet	= 64M</span>
+<span style="color:#75715e"># thread_stack		= 256K</span>
+
+<span style="color:#75715e"># thread_cache_size       = -1</span>
+
+<span style="color:#75715e"># This replaces the startup script and checks MyISAM tables if needed</span>
+<span style="color:#75715e"># the first time they are touched</span>
+<span style="color:#75715e">#myisam-recover-options  = BACKUP</span>
+
+<span style="color:#75715e"># max_connections        = 151</span>
+
+<span style="color:#75715e"># table_open_cache       = 4000</span>
+
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># * Logging and Replication</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># Both location gets rotated by the cronjob.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># Log all queries</span>
+<span style="color:#75715e"># Be aware that this log type is a performance killer.</span>
+<span style="color:#75715e"># general_log_file        = /var/log/mysql/query.log</span>
+<span style="color:#75715e"># general_log             = 1</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># Error log - should be very few entries.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#log_error = /var/log/mysql/error.log</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># Here you can see queries with especially long duration</span>
+<span style="color:#75715e"># slow_query_log		= 1</span>
+<span style="color:#75715e"># slow_query_log_file	= /var/log/mysql/mysql-slow.log</span>
+<span style="color:#75715e"># long_query_time = 2</span>
+<span style="color:#75715e"># log-queries-not-using-indexes</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e"># The following can be used as easy to replay backup logs or for replication.</span>
+<span style="color:#75715e"># note: if you are setting up a replication slave, see README.Debian about</span>
+<span style="color:#75715e">#       other settings you may need to change.</span>
+<span style="color:#75715e"># server-id		= 1</span>
+<span style="color:#75715e"># log_bin			= /var/log/mysql/mysql-bin.log</span>
+<span style="color:#75715e"># binlog_expire_logs_seconds	= 2592000</span>
+<span style="color:#75715e">#max_binlog_size   = 100M</span>
+<span style="color:#75715e"># binlog_do_db		= include_database_name</span>
+<span style="color:#75715e"># binlog_ignore_db	= include_database_name</span>
+sql-mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</code></pre></div><p>you can modify this file as farr your requirements.</p>
+<h2 id="docker-compose-file">docker-compose file</h2>
+<p>Now you have to create <em>docker-compose</em> file. For my case, this is <code>mysql_compose.yaml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3.6&#39;</span>
+
+<span style="color:#f92672">networks</span>:
+  <span style="color:#f92672">my_app_net</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my_app_net</span>
+    <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">bridge</span>
+
+<span style="color:#f92672">services</span>:
+  <span style="color:#f92672">my_mysql</span>:
+    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">my_mysql</span>
+    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mysql:latest</span>
+    <span style="color:#f92672">environment</span>:
+      <span style="color:#f92672">MYSQL_DATABASE</span>: <span style="color:#ae81ff">%db_name%</span>
+      <span style="color:#f92672">MYSQL_USER</span>: <span style="color:#ae81ff">%db_user%</span>
+      <span style="color:#f92672">MYSQL_PASSWORD</span>: <span style="color:#ae81ff">%db_password%</span>
+      <span style="color:#f92672">MYSQL_ROOT_PASSWORD</span>: <span style="color:#ae81ff">%db_root_password%</span>
+    <span style="color:#f92672">ports</span>:
+      - <span style="color:#ae81ff">3306</span>:<span style="color:#ae81ff">3306</span>
+    <span style="color:#f92672">networks</span>:
+      - <span style="color:#ae81ff">my_app_net</span>
+    <span style="color:#f92672">volumes</span>:
+      - <span style="color:#e6db74">&#34;%absoloute_path_of_mysql_data_directory%:/var/lib/mysql&#34;</span>
+      - <span style="color:#e6db74">&#34;%absoloute_path_of_mysql_config_directory%:/etc/mysql/conf.d&#34;</span>
+    <span style="color:#f92672">restart</span>: <span style="color:#66d9ef">on</span>-<span style="color:#ae81ff">failure</span>
+    <span style="color:#f92672">cap_add</span>:
+      - <span style="color:#ae81ff">SYS_NICE</span>
+</code></pre></div><p>Don&rsquo;t forget to replace the db name, password, root-password, mysql-data &amp; mysql-config directory path in the compose file.</p>
+<h2 id="start-stop-mysql-via-docker">start-stop mysql via docker</h2>
+<p>Start docker program into your machine. Then, open your <em>terminal</em> &amp; <code>cd</code> into compose file location.</p>
+<p>To start the service, execute:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose -f mysql_compose.yaml up
+</code></pre></div><p>It will read the compose file, setup the service &amp; start to log-out the mysql logs.</p>
+<p>To stop the service, stop the service by pressing <code>cntrl</code> + <code>c</code>.
+Then to remove the service from the stack, execute:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose -f mysql_compose.yaml down
+</code></pre></div>]]></content>
+        </item>
+        
+        <item>
             <title>Optional in Java</title>
             <link>https://fahim44.github.io/posts/2021/01/optional-in-java/</link>
             <pubDate>Fri, 01 Jan 2021 18:09:06 +0600</pubDate>
