@@ -46,16 +46,10 @@ Prerequisite Docker &amp;amp; Docker-compose should already be setup into your m
 <meta itemprop="name" content="mysql in docker">
 <meta itemprop="description" content="In this post, we will discuss how to setup &amp; run mysql using docker
 Goal We want to setup mysql using docker, but also want to provide our custom configurations for mysql and save mysql data into our machine. The reason of choosing docker over direct mysql installation into the machine is, we want to switch between mysql hosting machines with ease &amp; start-stop mysql into our macine easily.
-Prerequisite Docker &amp; Docker-compose should already be setup into your machine beforehand.">
-<meta itemprop="datePublished" content="2021-01-14T21:55:03+06:00" />
-<meta itemprop="dateModified" content="2021-01-14T21:55:03+06:00" />
-<meta itemprop="wordCount" content="611">
-<meta itemprop="image" content="https://fahim44.github.io/"/>
-
-
-
+Prerequisite Docker &amp; Docker-compose should already be setup into your machine beforehand."><meta itemprop="datePublished" content="2021-01-14T21:55:03&#43;06:00" />
+<meta itemprop="dateModified" content="2021-01-14T21:55:03&#43;06:00" />
+<meta itemprop="wordCount" content="634"><meta itemprop="image" content="https://fahim44.github.io/"/>
 <meta itemprop="keywords" content="mysql,docker," />
-
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://fahim44.github.io/"/>
 
@@ -71,10 +65,10 @@ Prerequisite Docker &amp; Docker-compose should already be setup into your machi
 Goal We want to setup mysql using docker, but also want to provide our custom configurations for mysql and save mysql data into our machine. The reason of choosing docker over direct mysql installation into the machine is, we want to switch between mysql hosting machines with ease &amp; start-stop mysql into our macine easily.
 Prerequisite Docker &amp; Docker-compose should already be setup into your machine beforehand." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://fahim44.github.io/posts/2021/01/mysql-in-docker/" />
-<meta property="og:image" content="https://fahim44.github.io/"/>
-<meta property="article:published_time" content="2021-01-14T21:55:03+06:00" />
-<meta property="article:modified_time" content="2021-01-14T21:55:03+06:00" />
+<meta property="og:url" content="https://fahim44.github.io/posts/2021/01/mysql-in-docker/" /><meta property="og:image" content="https://fahim44.github.io/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-01-14T21:55:03&#43;06:00" />
+<meta property="article:modified_time" content="2021-01-14T21:55:03&#43;06:00" />
+
 
 
 
@@ -183,7 +177,7 @@ Prerequisite Docker &amp; Docker-compose should already be setup into your machi
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        611 Words
+        634 Words
       </p>
 
       <p>
@@ -300,9 +294,10 @@ Prerequisite Docker &amp; Docker-compose should already be setup into your machi
   <ul>
     <li><a href="#goal">Goal</a></li>
     <li><a href="#prerequisite">Prerequisite</a></li>
-    <li><a href="#config--data-directory">config &amp; data directory</a></li>
+    <li><a href="#config--data-directory">Config &amp; data directory</a></li>
     <li><a href="#docker-compose-file">docker-compose file</a></li>
-    <li><a href="#start-stop-mysql-via-docker">start-stop mysql via docker</a></li>
+    <li><a href="#start-stop-mysql-via-docker">Start-stop mysql via docker</a></li>
+    <li><a href="#access-mysql-cli">Access mysql cli</a></li>
   </ul>
 </nav>
       </aside>
@@ -312,12 +307,16 @@ Prerequisite Docker &amp; Docker-compose should already be setup into your machi
 
     <div class="post-content">
       <p>In this post, we will discuss how to setup &amp; run <em>mysql</em> using <em>docker</em></p>
+
+    <img src="https://fahim44.github.io/img/whale.webp"  alt="Whale"  class="center"  style="border-radius: 8px;"  />
+
+
 <h2 id="goal">Goal</h2>
 <p>We want to setup <em>mysql</em> using <em>docker</em>, but also want to provide our custom configurations for mysql and save mysql data into our machine.
 The reason of choosing docker over direct mysql installation into the machine is, we want to switch between mysql hosting machines with ease &amp; start-stop mysql into our macine easily.</p>
 <h2 id="prerequisite">Prerequisite</h2>
 <p><a href="https://www.docker.com/">Docker</a> &amp; <a href="https://docs.docker.com/compose/">Docker-compose</a> should already be setup into your machine beforehand.</p>
-<h2 id="config--data-directory">config &amp; data directory</h2>
+<h2 id="config--data-directory">Config &amp; data directory</h2>
 <p>First create two empty directories into your machine, anywhere you want with any name.
 One for <em>mysql-config</em>, to store mysql configuration file.
 Another for <em>mysql-data</em>, to persist database&rsquo;s data.</p>
@@ -412,7 +411,7 @@ sql-mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&
 
 <span style="color:#f92672">services</span>:
   <span style="color:#f92672">my_mysql</span>:
-    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">my_mysql</span>
+    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">%container_name%</span>
     <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mysql:latest</span>
     <span style="color:#f92672">environment</span>:
       <span style="color:#f92672">MYSQL_DATABASE</span>: <span style="color:#ae81ff">%db_name%</span>
@@ -430,7 +429,7 @@ sql-mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&
     <span style="color:#f92672">cap_add</span>:
       - <span style="color:#ae81ff">SYS_NICE</span>
 </code></pre></div><p>Don&rsquo;t forget to replace the db name, password, root-password, mysql-data &amp; mysql-config directory path in the compose file.</p>
-<h2 id="start-stop-mysql-via-docker">start-stop mysql via docker</h2>
+<h2 id="start-stop-mysql-via-docker">Start-stop mysql via docker</h2>
 <p>Start docker program into your machine. Then, open your <em>terminal</em> &amp; <code>cd</code> into compose file location.</p>
 <p>To start the service, execute:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose -f mysql_compose.yaml up
@@ -438,6 +437,9 @@ sql-mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&
 <p>To stop the service, stop the service by pressing <code>cntrl</code> + <code>c</code>.
 Then to remove the service from the stack, execute:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose -f mysql_compose.yaml down
+</code></pre></div><h2 id="access-mysql-cli">Access mysql cli</h2>
+<p>To access the started mysql&rsquo;s cli, you can execute the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -it %container_name% mysql --user root --password<span style="color:#f92672">=</span>%db_root_password%
 </code></pre></div>
     </div>
 
@@ -449,6 +451,13 @@ Then to remove the service from the stack, execute:</p>
         </div>
 
         <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="https://fahim44.github.io/posts/2021/03/http-request-methods/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Http request methods</span>
+              </a>
+            </span>
           
 
           
@@ -497,7 +506,7 @@ Then to remove the service from the stack, execute:</p>
 
 
 
-<script type="text/javascript" src="https://fahim44.github.io/bundle.min.31303bf27a79427053e49e9f76e81fb7df558221e63249ca192adfcd47132d3d6e1b497713da4981a6eb4285bfc3261d2a51efb1fd772f51887041b8f6ebf0b6.js" integrity="sha512-MTA78np5QnBT5J6fdugft99VgiHmMknKGSrfzUcTLT1uG0l3E9pJgabrQoW/wyYdKlHvsf13L1GIcEG49uvwtg=="></script>
+<script type="text/javascript" src="https://fahim44.github.io/bundle.min.a254c28eea1d4ce2f83b5b9d88a75b5da9d98adbd5f45c5ce815adb55382105043ae37198e8775b73c3134a82967d03067d986f51c3e3fd47ec61a7204b2d435.js" integrity="sha512-olTCjuodTOL4O1udiKdbXanZitvV9Fxc6BWttVOCEFBDrjcZjod1tzwxNKgpZ9AwZ9mG9Rw&#43;P9R&#43;xhpyBLLUNQ=="></script>
 
 
 

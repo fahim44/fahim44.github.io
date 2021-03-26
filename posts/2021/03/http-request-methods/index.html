@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Fahim Salam Chowdhury ">
+<meta name="description" content="To indicate what action should be taken on a Resource, HTTP provides some pre-defined Request Methods. Because of reffering actions, thses methods are sometimes reffered as HTTP verbs.
+Features of HTTP Methods Although they are semantically difference, HTTP Methods share some common features/quality among them.
+Safe An Http method is called safe, if it doesn&amp;rsquo;t change any server state. Meaning, if the Http method&amp;rsquo;s main operation is read-only, then the method is safe." />
+<meta name="keywords" content="Fahim, blog, site, Fahim Salam, Fahim Salam Chowdury, homepage, web, web" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://fahim44.github.io/posts/2021/03/http-request-methods/" />
+
+
+    <title>
+        
+            Http request methods :: Fahim Salam Chowdhury  — Fahim Salam Chowdhury
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://fahim44.github.io/main.19b90c82294f14068330b505b94845f69ac342d3464f59451cef38a7aab38f56.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://fahim44.github.io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://fahim44.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://fahim44.github.io/favicon-16x16.png">
+    <link rel="manifest" href="https://fahim44.github.io/site.webmanifest">
+    <link rel="mask-icon" href="https://fahim44.github.io/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://fahim44.github.io/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Http request methods">
+<meta itemprop="description" content="To indicate what action should be taken on a Resource, HTTP provides some pre-defined Request Methods. Because of reffering actions, thses methods are sometimes reffered as HTTP verbs.
+Features of HTTP Methods Although they are semantically difference, HTTP Methods share some common features/quality among them.
+Safe An Http method is called safe, if it doesn&rsquo;t change any server state. Meaning, if the Http method&rsquo;s main operation is read-only, then the method is safe."><meta itemprop="datePublished" content="2021-03-26T22:56:59&#43;06:00" />
+<meta itemprop="dateModified" content="2021-03-26T22:56:59&#43;06:00" />
+<meta itemprop="wordCount" content="1879"><meta itemprop="image" content="https://fahim44.github.io/"/>
+<meta itemprop="keywords" content="web," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://fahim44.github.io/"/>
+
+<meta name="twitter:title" content="Http request methods"/>
+<meta name="twitter:description" content="To indicate what action should be taken on a Resource, HTTP provides some pre-defined Request Methods. Because of reffering actions, thses methods are sometimes reffered as HTTP verbs.
+Features of HTTP Methods Although they are semantically difference, HTTP Methods share some common features/quality among them.
+Safe An Http method is called safe, if it doesn&rsquo;t change any server state. Meaning, if the Http method&rsquo;s main operation is read-only, then the method is safe."/>
+
+
+
+    <meta property="og:title" content="Http request methods" />
+<meta property="og:description" content="To indicate what action should be taken on a Resource, HTTP provides some pre-defined Request Methods. Because of reffering actions, thses methods are sometimes reffered as HTTP verbs.
+Features of HTTP Methods Although they are semantically difference, HTTP Methods share some common features/quality among them.
+Safe An Http method is called safe, if it doesn&rsquo;t change any server state. Meaning, if the Http method&rsquo;s main operation is read-only, then the method is safe." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fahim44.github.io/posts/2021/03/http-request-methods/" /><meta property="og:image" content="https://fahim44.github.io/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-26T22:56:59&#43;06:00" />
+<meta property="article:modified_time" content="2021-03-26T22:56:59&#43;06:00" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2021-03-26 22:56:59 &#43;0600 &#43;06" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://fahim44.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd ~/home/fahim</span>
+            <span class="logo__cursor" style=
+                  "
+                   background-color:#67a2c9;
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://fahim44.github.io/about/">About</a></li><li><a href="https://fahim44.github.io/timeline/">Timeline</a></li><li><a href="https://fahim44.github.io/projects/">Projects</a></li><li><a href="https://fahim44.github.io/posts/">Posts</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        9 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://fahim44.github.io/posts/2021/03/http-request-methods/">Http request methods</a>
+      </h1>
+
+      
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://fahim44.github.io/tags/web/">web</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1879 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        2021-03-26
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2ffahim44.github.io%2fposts%2f2021%2f03%2fhttp-request-methods%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2ffahim44.github.io%2fposts%2f2021%2f03%2fhttp-request-methods%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Http%20request%20methods&amp;caption=Http%20request%20methods&amp;canonicalUrl=https%3a%2f%2ffahim44.github.io%2fposts%2f2021%2f03%2fhttp-request-methods%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Http%20request%20methods&amp;body=https%3a%2f%2ffahim44.github.io%2fposts%2f2021%2f03%2fhttp-request-methods%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2ffahim44.github.io%2fposts%2f2021%2f03%2fhttp-request-methods%2f&amp;media=https%3a%2f%2ffahim44.github.io%2fposts%2f2021%2f03%2fhttp-request-methods%2f;description=Http%20request%20methods" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffahim44.github.io%2fposts%2f2021%2f03%2fhttp-request-methods%2f&amp;title=Http%20request%20methods&amp;summary=Http%20request%20methods&amp;source=https%3a%2f%2ffahim44.github.io%2fposts%2f2021%2f03%2fhttp-request-methods%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2ffahim44.github.io%2fposts%2f2021%2f03%2fhttp-request-methods%2f&amp;resubmit=true&amp;title=Http%20request%20methods" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2ffahim44.github.io%2fposts%2f2021%2f03%2fhttp-request-methods%2f;title=Http%20request%20methods" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Http%20request%20methods%20https%3a%2f%2ffahim44.github.io%2fposts%2f2021%2f03%2fhttp-request-methods%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2ffahim44.github.io%2fposts%2f2021%2f03%2fhttp-request-methods%2f&amp;t=Http%20request%20methods" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Http%20request%20methods&amp;url=https%3a%2f%2ffahim44.github.io%2fposts%2f2021%2f03%2fhttp-request-methods%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+      <hr />
+      <aside id="toc">
+        <div class="toc-title">Table of Contents</div>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#features-of-http-methods">Features of HTTP Methods</a>
+      <ul>
+        <li><a href="#safe">Safe</a></li>
+        <li><a href="#idempotent">Idempotent</a></li>
+        <li><a href="#cacheable">Cacheable</a></li>
+      </ul>
+    </li>
+    <li><a href="#http-methods">HTTP Methods</a>
+      <ul>
+        <li><a href="#get">GET</a></li>
+        <li><a href="#post">POST</a></li>
+        <li><a href="#put">PUT</a></li>
+        <li><a href="#delete">DELETE</a></li>
+        <li><a href="#patch">PATCH</a></li>
+        <li><a href="#head">HEAD</a></li>
+        <li><a href="#connect">CONNECT</a></li>
+        <li><a href="#options">OPTIONS</a></li>
+        <li><a href="#trace">TRACE</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+      </aside>
+      <hr />
+
+    
+
+    <div class="post-content">
+      <p>To indicate what action should be taken on a <em>Resource</em>, <em>HTTP</em> provides some pre-defined <strong>Request Methods</strong>.
+Because of reffering actions, thses methods are sometimes reffered as <em>HTTP verbs</em>.</p>
+
+    <img src="https://fahim44.github.io/img/sign_up_today.webp"  alt="Request Header"  class="center"  style="border-radius: 8px;"  />
+
+
+<h2 id="features-of-http-methods">Features of HTTP Methods</h2>
+<p>Although they are semantically difference, HTTP Methods share some common features/quality among them.</p>
+<h3 id="safe">Safe</h3>
+<p>An Http method is called <em>safe</em>, if it doesn&rsquo;t change any server state.
+Meaning, if the Http method&rsquo;s main operation is <em>read-only</em>, then the method is <em>safe</em>.
+For example, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code> are some safe http methods.</p>
+<p>A <em>safe</em> method <strong>should not change</strong> any server state.
+It&rsquo;s only purpose is retrieve ready-only data.
+Although server itself can change its status when calling safe method, for example server can log the calling of the method.
+The main reason of safe methods not to change the server status is; these methods are &ldquo;<em>open</em>&rdquo;, meaning anybody can see what information they are passing to manupulate the server.
+And again, web crawlers rely on calling safe methods.</p>
+<p>So, in-sort, making an order via calling <code>GET</code> methood = BAD IDEA.</p>
+<p>One last note&hellip; <strong>All safe methods are idempotent, but not all idempotent methods are safe.</strong>
+For example, <code>PUT</code> and <code>DELETE</code> are both idempotent but unsafe.</p>
+<h3 id="idempotent">Idempotent</h3>
+<p>A Http method is called <em>idempotent</em>, when identical multiple reuquests with same effect leave the server into same state.
+Meaning if you make same request multiple time, server will always be change to same state.</p>
+<p>For example, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code> keep the server state intact. So that they are idempotent.
+Again, <code>PUT</code> &amp; <code>DELETE</code> with same parameter only change the server state for the first time request, following requests don&rsquo;t change anything. So they are also idempotent.
+But, when requesting <code>POST</code> with same parameter multiple times, server might create new entities for every request. That&rsquo;s why <code>POST</code> is not idempotent.</p>
+<p>In sort, idempotent methods have no side effect. Servers can save analytic data for each request, but as they don&rsquo;t change the server&rsquo;s actual state anyway, we can ignore them.</p>
+<p>Last but not least, this feature actually depends on deveoper.
+Suppose, you develop an api <code>DELETE /user/{id}</code>, then we can say it is idempotent, because for first successful delete it will return <code>2xx</code> response, the later requests will always return <code>4xx</code> status, because the requests will not affect the server state anymore.
+But if we develop an api <code>DELETE /user/lastEntry</code>, then it is not idempotent.
+Because every request to this api, will delete last current row every time, thus changing the server state every time.</p>
+<h3 id="cacheable">Cacheable</h3>
+<p>Client for example browser can cache some http responses.
+Not all http responses can be cached.
+There are some constrains which should be passed to be able to cache http responses.</p>
+<ol>
+<li>
+<p>Http method should be cacheable.
+<code>GET</code> &amp; <code>HEAD</code> methods are eligible for caching.
+<code>POST</code> &amp; <code>PATCH</code> methods can be cached if the <code>Content-Location</code> header is set, although most of the clients don&rsquo;t implement it.
+<code>PUT</code> and <code>DELETE</code> methods are not cacheable.</p>
+</li>
+<li>
+<p>Fix response status codes make the response cache considerables.
+These status codes are <code>200</code>, <code>203</code>, <code>204</code>, <code>206</code>, <code>300</code>, <code>301</code>, <code>404</code>, <code>405</code>, <code>410</code>, <code>414</code>, and <code>501</code>.</p>
+</li>
+<li>
+<p>Some specific headers like <code>Cache-Control</code> can prevent caching.</p>
+</li>
+</ol>
+<p>Note that some non-cacheable requests/responses to a specific URI may invalidate previously cached responses on the same URI.</p>
+<h2 id="http-methods">HTTP Methods</h2>
+<p>There are 9 types of Http methods.
+Of them, 4 are most known (<code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>) &amp; 2 are mostly used (<code>GET</code>, <code>POST</code>) methods.</p>
+<h3 id="get">GET</h3>
+<p>The <code>GET</code> methods requests to <strong>read</strong> any specified resource.
+GET should only be used to retrieve data.
+Data is passed to the caller as the response body.
+GET is <a href="#safe">safe</a>, <a href="#idempotent">idempotent</a>, <a href="#cacheable">cacheable</a>.
+GET is also allowed in the <em>HTML forms</em>.</p>
+<p>Althouth there is no prohibition from the specification, Some existing implementation may not support sending body/payload in the GET request.
+So, it is better not to send payload in the GET request.</p>
+<h3 id="post">POST</h3>
+<p>Using <code>POST</code> method, we can pass <em>entity</em> of a specific resource to server, which can change some state of the server.
+Mainly <code>POST</code> is used to <strong>create</strong> a new entity.
+The <code>Content-Type</code> request header indicates the request body type in POST http method.</p>
+<p><code>POST</code> has request body &amp; successful response body.
+It is not <a href="#safe">safe</a> &amp; <a href="#idempotent">idempotent</a>.
+It can be <a href="#cacheable">cacheable</a> only if freshness information is included.
+It is allowed in the <em>HTML forms</em>.</p>
+<p>Other than <a href="#get">GET</a>, <code>POST</code> is one of the most popular Http method.
+For example, <strong>GraphQL</strong> uses <code>POST</code> to pass data between client &amp; server.</p>
+<h3 id="put">PUT</h3>
+<p><code>PUT</code> is used to <strong>create new if not already present, else update the existing</strong> a specific resource.
+<code>PUT</code> is used to update the <em>whole entity</em>.
+The main difference between it &amp; <a href="#post">post</a> is, <code>PUT</code> is <a href="#idempotent">idempotent</a>, but POST is not.</p>
+<p><code>PUT</code> has request body but no successful response body.
+It is not <a href="#safe">safe</a> &amp; <a href="#cacheable">cacheable</a>, &amp; not allowed in the <em>HTML forms</em>.</p>
+<h3 id="delete">DELETE</h3>
+<p>Http method <code>DELETE</code> is used to <strong>delete/remove</strong> a specific resource.</p>
+<p><code>DELETE</code> may have request body and successful response body.
+It is <a href="#idempotent">idempotent</a>, but not <a href="#safe">safe</a> &amp; <a href="#cacheable">cacheable</a>.
+<code>DELETE</code> is not allowed in the <em>HTML forms</em>.</p>
+<h3 id="patch">PATCH</h3>
+<p><code>PATCH</code> is used to <em>partially modify</em> a specific resource.
+It is used to update any entities one/more fields.
+The main differece between <a href="#put">PUT</a> &amp; <code>PATCH</code> is that, in <code>PATCH</code> one or more fields of any entity get updated, BUT in <code>PUT</code> the whole entity gets replaced.</p>
+<p><code>PATCH</code> has request body &amp; successful response body.
+It is not <a href="#safe">safe</a>, <a href="#idempotent">idempotent</a> &amp; <a href="#cacheable">cacheable</a>.
+It is not allowed in the <em>HTML forms</em>.</p>
+<h3 id="head">HEAD</h3>
+<p>Same as <a href="#get"><code>GET</code></a>, <code>HEAD</code> http method requests to <strong>read</strong> specific resource.
+The differece between these two is <code>GET</code> is interested in actual data, where <code>HEAD</code> is interested on <em>status of the data</em>.
+Again, HEAD is faster than GET request.</p>
+<p>HEAD method requests for <a href="#http-headers">HTTP HEADERS</a>.
+HEAD method doesn&rsquo;t support data passing via request/response body.
+HEAD is <a href="#safe">safe</a>, <a href="#idempotent">idempotent</a>, <a href="#cacheable">cacheable</a>.
+HEAD is not allowed in the <em>HTML forms</em>.</p>
+<p>For example, an url makes a request for large download.
+Instead of actually downloading the data, HEAD request could read its <code>Content-Length</code> header to check the filesize without actually downloading the file.</p>
+<p>Another example is hashing.
+Suppose a browser is caching data.
+Before making any GET request to a particular url to retrieve the actual data everytime, we can make HEAD request to check the hash code if the data is changed or not.
+If not changed, we can show the data from the cache.
+Or if changed, we can make the GET request to retrieve the actual data.</p>
+<ul>
+<li>
+<h4 id="http-headers">HTTP HEADERS</h4>
+</li>
+</ul>
+<p><code>HEADERS</code> let the client &amp; server pass additional informatiion with an HTTP request or response.
+A header passes data in <em>key-value</em> pair syntax, having <code>:</code> between them as separator.
+A header dosen&rsquo;t hold actual data, but information of the data.
+There are various types of headers, for example, <em>General headers</em>, <em>Request headers</em>, <em>Response headers</em>, <em>Entity headers</em>.</p>
+<h3 id="connect">CONNECT</h3>
+<p>Http method <code>CONNECT</code> is used open a <em>tunnel</em> between client and server identified by the target resource.
+It starts a <em>two-way communication</em> between client &amp; server.
+<code>CONNECT</code> method can be used to access websites that use <em>SSL</em> or <em>HTTPS</em>.</p>
+<p>For example, the client asks the <em>HTTP proxy server</em> to tunnel <em>TCP connection</em> to desired destination using CONNECT method.
+The proxy server makes the connection on behalf of the client.
+When connection is established, the proxy server continues to proxy the TCP stream to and from the client.</p>
+<p>Some proxy servers might need authority to create a tunnel using <a href="#proxy-authorization">Proxy-Authorization</a> request header.</p>
+<p><code>CONNECT</code> has no request body, but has successful response body.
+It is not <a href="#safe">safe</a>, <a href="#idempotent">idempotent</a>, <a href="#cacheable">cacheable</a>.
+<code>CONNECT</code> is not allowed in the <em>HTML forms</em>.</p>
+<ul>
+<li>
+<h4 id="proxy-authorization">Proxy-Authorization</h4>
+</li>
+</ul>
+<p><code>Http Proxy-Authorization request header</code> contains the credential to authenticate a client to proxy server. It is required to pass with the request if server responded before with <code>407</code> <code>Proxy Authentication Required</code> status code with <code>Proxy-Authonticate</code> response header.</p>
+<p><code>Proxy-Authorization</code> syntax is:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">Proxy-Authorization: &lt;<span style="color:#f92672">type</span>&gt; &lt;<span style="color:#f92672">credentials</span>&gt;
+</code></pre></div><p>Here, <code>&lt;type&gt;</code> will be replaced with <code>Authentication type</code>.
+The most common type is <code>Basic</code>.</p>
+<p>the <code>&lt;credentials&gt;</code> will be replaced with client&rsquo;s credential.
+The credential is generated by following steps:</p>
+<ul>
+<li>The username and the password are combined with a colon (<code>:</code>) (example: <code>username:password</code>)</li>
+<li>Encode the resulting string into <strong>Base64</strong>.</li>
+</ul>
+<h3 id="options">OPTIONS</h3>
+<p>Http method <code>OPTIONS</code> provides response of what communcation options are permitted for targeted resource.
+<code>OPTIONS</code> can be used to identify what <strong>other Http methods</strong> are allowed for the specific resource.
+It is also used as <a href="#preflighted-requests-in-cors">preflightd request</a> by mordern browser to support <strong>CORS</strong>.
+Client can specify a url or use <code>*</code> for whole server to get list of allowed options with <code>OPTIONS</code> method.</p>
+<p>Popular server (for example: Tomcat) normally configure <code>OPTIONS</code> methods for whole server &amp; specific urls autometically.</p>
+<p><code>OPTIONS</code>  has no request body, but has successful response body.
+It is <a href="#safe">safe</a> &amp; <a href="#idempotent">idempotent</a>, but not <a href="#cacheable">cacheable</a>.
+<code>OPTIONS</code> is not allowed in the <em>HTML forms</em>.</p>
+<ul>
+<li>
+<h4 id="preflighted-requests-in-cors">Preflighted requests in CORS</h4>
+</li>
+</ul>
+<p>In mordern browsers, when from inside of any domain (for example, <code>a.com</code>), we try to call another domain&rsquo;s (<code>b.com</code>) any resource (<code>GET b.com/users</code> using <em>ajax</em> call), browsers don&rsquo;t call the method right-away.
+Instead it calls <code>OPTIONS b.com/users</code> first, to check if <code>a.com</code> is eligible to call <code>GET b.com</code>.
+If <code>b.com</code> grants <code>a.com</code> to call the <code>GET b.com/users</code>, then browser will make the request.
+This pre-check request is called <strong>Preflighted request</strong> and it is designed support <strong>CORS</strong> safety.</p>
+<p>Browser check some specific response header of the OPTIONS response to check CORS.
+These headers are:</p>
+<ul>
+<li><code>Access-Control-Allow-Origin</code> what <em>domains</em> other than itself is allowed to retrieve this specific resource.
+Using <code>*</code> can open for all domains. Using <code>*</code> is not recomended due to security reason.</li>
+<li><code>Access-Control-Allow-Methods</code> what <em>http methods</em> are allowed to be called.
+It is same as <code>Allowed</code> header, but it is used for CORS.</li>
+<li><code>Access-Control-Allow-Headers</code> what <em>response headers</em> are allowed to be read.</li>
+<li><code>Access-Control-Max-Age</code> what is the max time these allowed permissions can be cached.</li>
+</ul>
+<p>For example, browser makes the following Preflighted request:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">OPTIONS /users HTTP/1.1
+Host: b.com
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Connection: keep-alive
+Origin: https://a.com
+Access-Control-Request-Method: GET
+Access-Control-Request-Headers: X-PINGOTHER, Content-Type
+</code></pre></div><p>and the response is the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">HTTP/1.1 204 No Content
+Date: Mon, 01 Jan 2021 01:15:39 GMT
+Server: Apache/2.0.61 (Unix)
+Access-Control-Allow-Origin: https://a.com
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Headers: X-PINGOTHER, Content-Type
+Access-Control-Max-Age: 86400
+Vary: Accept-Encoding, Origin
+Keep-Alive: timeout=2, max=100
+Connection: Keep-Alive
+</code></pre></div><h3 id="trace">TRACE</h3>
+<p>Http method <code>TRACE</code> is used perform message loop-back test.
+It is mainly used for debugging purpose.
+The <em>loop-back test</em> means the caller will receive back what it has send to the server in request as response with some additional info.
+If successful, the response code will be <code>200</code> with the <em>content-type</em> of <code>message/http</code>.
+The final recipient is either the <strong>origin server</strong> or the first server to receive a <em>Max-Forwards</em> value of <code>0</code> in the request.</p>
+<p>For this method, <em>request</em> &amp; <em>response</em> have no body.
+<code>TRACE</code> is <a href="#safe">safe</a> &amp; <a href="#idempotent">idempotent</a>, but not <a href="#cacheable">cacheable</a>.
+<code>TRACE</code> is not allowed in the <em>HTML forms</em>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Although Http provides these all kind of methods to be used for all type of tasks, it is up to us developers to use them in our projects.
+We can use <code>GET</code> request to <strong>delete</strong> entity from our database, no one will stop us.
+But we have to understand, by doing so, our data becomes more vulnerable.</p>
+<p>Again, our web browsers use these various methods like <code>OPTIONS</code> all the time to ensure security.</p>
+<p>Whatever we use all these methods or not, it is always good to know these methods.</p>
+
+    </div>
+
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"></span>
+          <hr />
+        </div>
+
+        <div class="pagination__buttons">
+          
+
+          
+            <span class="button next">
+              <a href="https://fahim44.github.io/posts/2021/01/mysql-in-docker/">
+                <span class="button__text">mysql in docker</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            
+                <span><a href="https://fahim44.github.io/">Fahim Salam Chowdhury</a></span>
+            
+            <span><a href="https://fahim44.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span style="font-size: 50%;">Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span style="font-size: 50%;">Based on themes made by <a href="https://github.com/rhazdon">Djordje Atlialp</a> & <a href="https://github.com/s4n7h0">Sanoop Thomas</a></span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://fahim44.github.io/bundle.min.a254c28eea1d4ce2f83b5b9d88a75b5da9d98adbd5f45c5ce815adb55382105043ae37198e8775b73c3134a82967d03067d986f51c3e3fd47ec61a7204b2d435.js" integrity="sha512-olTCjuodTOL4O1udiKdbXanZitvV9Fxc6BWttVOCEFBDrjcZjod1tzwxNKgpZ9AwZ9mG9Rw&#43;P9R&#43;xhpyBLLUNQ=="></script>
+
+
+
+    </body>
+</html>

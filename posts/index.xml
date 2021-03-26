@@ -9,6 +9,223 @@
         <atom:link href="https://fahim44.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Http request methods</title>
+            <link>https://fahim44.github.io/posts/2021/03/http-request-methods/</link>
+            <pubDate>Fri, 26 Mar 2021 22:56:59 +0600</pubDate>
+            
+            <guid>https://fahim44.github.io/posts/2021/03/http-request-methods/</guid>
+            <description>To indicate what action should be taken on a Resource, HTTP provides some pre-defined Request Methods. Because of reffering actions, thses methods are sometimes reffered as HTTP verbs.
+Features of HTTP Methods Although they are semantically difference, HTTP Methods share some common features/quality among them.
+Safe An Http method is called safe, if it doesn&amp;rsquo;t change any server state. Meaning, if the Http method&amp;rsquo;s main operation is read-only, then the method is safe.</description>
+            <content type="html"><![CDATA[<p>To indicate what action should be taken on a <em>Resource</em>, <em>HTTP</em> provides some pre-defined <strong>Request Methods</strong>.
+Because of reffering actions, thses methods are sometimes reffered as <em>HTTP verbs</em>.</p>
+
+    <img src="/img/sign_up_today.webp"  alt="Request Header"  class="center"  style="border-radius: 8px;"  />
+
+
+<h2 id="features-of-http-methods">Features of HTTP Methods</h2>
+<p>Although they are semantically difference, HTTP Methods share some common features/quality among them.</p>
+<h3 id="safe">Safe</h3>
+<p>An Http method is called <em>safe</em>, if it doesn&rsquo;t change any server state.
+Meaning, if the Http method&rsquo;s main operation is <em>read-only</em>, then the method is <em>safe</em>.
+For example, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code> are some safe http methods.</p>
+<p>A <em>safe</em> method <strong>should not change</strong> any server state.
+It&rsquo;s only purpose is retrieve ready-only data.
+Although server itself can change its status when calling safe method, for example server can log the calling of the method.
+The main reason of safe methods not to change the server status is; these methods are &ldquo;<em>open</em>&rdquo;, meaning anybody can see what information they are passing to manupulate the server.
+And again, web crawlers rely on calling safe methods.</p>
+<p>So, in-sort, making an order via calling <code>GET</code> methood = BAD IDEA.</p>
+<p>One last note&hellip; <strong>All safe methods are idempotent, but not all idempotent methods are safe.</strong>
+For example, <code>PUT</code> and <code>DELETE</code> are both idempotent but unsafe.</p>
+<h3 id="idempotent">Idempotent</h3>
+<p>A Http method is called <em>idempotent</em>, when identical multiple reuquests with same effect leave the server into same state.
+Meaning if you make same request multiple time, server will always be change to same state.</p>
+<p>For example, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code> keep the server state intact. So that they are idempotent.
+Again, <code>PUT</code> &amp; <code>DELETE</code> with same parameter only change the server state for the first time request, following requests don&rsquo;t change anything. So they are also idempotent.
+But, when requesting <code>POST</code> with same parameter multiple times, server might create new entities for every request. That&rsquo;s why <code>POST</code> is not idempotent.</p>
+<p>In sort, idempotent methods have no side effect. Servers can save analytic data for each request, but as they don&rsquo;t change the server&rsquo;s actual state anyway, we can ignore them.</p>
+<p>Last but not least, this feature actually depends on deveoper.
+Suppose, you develop an api <code>DELETE /user/{id}</code>, then we can say it is idempotent, because for first successful delete it will return <code>2xx</code> response, the later requests will always return <code>4xx</code> status, because the requests will not affect the server state anymore.
+But if we develop an api <code>DELETE /user/lastEntry</code>, then it is not idempotent.
+Because every request to this api, will delete last current row every time, thus changing the server state every time.</p>
+<h3 id="cacheable">Cacheable</h3>
+<p>Client for example browser can cache some http responses.
+Not all http responses can be cached.
+There are some constrains which should be passed to be able to cache http responses.</p>
+<ol>
+<li>
+<p>Http method should be cacheable.
+<code>GET</code> &amp; <code>HEAD</code> methods are eligible for caching.
+<code>POST</code> &amp; <code>PATCH</code> methods can be cached if the <code>Content-Location</code> header is set, although most of the clients don&rsquo;t implement it.
+<code>PUT</code> and <code>DELETE</code> methods are not cacheable.</p>
+</li>
+<li>
+<p>Fix response status codes make the response cache considerables.
+These status codes are <code>200</code>, <code>203</code>, <code>204</code>, <code>206</code>, <code>300</code>, <code>301</code>, <code>404</code>, <code>405</code>, <code>410</code>, <code>414</code>, and <code>501</code>.</p>
+</li>
+<li>
+<p>Some specific headers like <code>Cache-Control</code> can prevent caching.</p>
+</li>
+</ol>
+<p>Note that some non-cacheable requests/responses to a specific URI may invalidate previously cached responses on the same URI.</p>
+<h2 id="http-methods">HTTP Methods</h2>
+<p>There are 9 types of Http methods.
+Of them, 4 are most known (<code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>) &amp; 2 are mostly used (<code>GET</code>, <code>POST</code>) methods.</p>
+<h3 id="get">GET</h3>
+<p>The <code>GET</code> methods requests to <strong>read</strong> any specified resource.
+GET should only be used to retrieve data.
+Data is passed to the caller as the response body.
+GET is <a href="#safe">safe</a>, <a href="#idempotent">idempotent</a>, <a href="#cacheable">cacheable</a>.
+GET is also allowed in the <em>HTML forms</em>.</p>
+<p>Althouth there is no prohibition from the specification, Some existing implementation may not support sending body/payload in the GET request.
+So, it is better not to send payload in the GET request.</p>
+<h3 id="post">POST</h3>
+<p>Using <code>POST</code> method, we can pass <em>entity</em> of a specific resource to server, which can change some state of the server.
+Mainly <code>POST</code> is used to <strong>create</strong> a new entity.
+The <code>Content-Type</code> request header indicates the request body type in POST http method.</p>
+<p><code>POST</code> has request body &amp; successful response body.
+It is not <a href="#safe">safe</a> &amp; <a href="#idempotent">idempotent</a>.
+It can be <a href="#cacheable">cacheable</a> only if freshness information is included.
+It is allowed in the <em>HTML forms</em>.</p>
+<p>Other than <a href="#get">GET</a>, <code>POST</code> is one of the most popular Http method.
+For example, <strong>GraphQL</strong> uses <code>POST</code> to pass data between client &amp; server.</p>
+<h3 id="put">PUT</h3>
+<p><code>PUT</code> is used to <strong>create new if not already present, else update the existing</strong> a specific resource.
+<code>PUT</code> is used to update the <em>whole entity</em>.
+The main difference between it &amp; <a href="#post">post</a> is, <code>PUT</code> is <a href="#idempotent">idempotent</a>, but POST is not.</p>
+<p><code>PUT</code> has request body but no successful response body.
+It is not <a href="#safe">safe</a> &amp; <a href="#cacheable">cacheable</a>, &amp; not allowed in the <em>HTML forms</em>.</p>
+<h3 id="delete">DELETE</h3>
+<p>Http method <code>DELETE</code> is used to <strong>delete/remove</strong> a specific resource.</p>
+<p><code>DELETE</code> may have request body and successful response body.
+It is <a href="#idempotent">idempotent</a>, but not <a href="#safe">safe</a> &amp; <a href="#cacheable">cacheable</a>.
+<code>DELETE</code> is not allowed in the <em>HTML forms</em>.</p>
+<h3 id="patch">PATCH</h3>
+<p><code>PATCH</code> is used to <em>partially modify</em> a specific resource.
+It is used to update any entities one/more fields.
+The main differece between <a href="#put">PUT</a> &amp; <code>PATCH</code> is that, in <code>PATCH</code> one or more fields of any entity get updated, BUT in <code>PUT</code> the whole entity gets replaced.</p>
+<p><code>PATCH</code> has request body &amp; successful response body.
+It is not <a href="#safe">safe</a>, <a href="#idempotent">idempotent</a> &amp; <a href="#cacheable">cacheable</a>.
+It is not allowed in the <em>HTML forms</em>.</p>
+<h3 id="head">HEAD</h3>
+<p>Same as <a href="#get"><code>GET</code></a>, <code>HEAD</code> http method requests to <strong>read</strong> specific resource.
+The differece between these two is <code>GET</code> is interested in actual data, where <code>HEAD</code> is interested on <em>status of the data</em>.
+Again, HEAD is faster than GET request.</p>
+<p>HEAD method requests for <a href="#http-headers">HTTP HEADERS</a>.
+HEAD method doesn&rsquo;t support data passing via request/response body.
+HEAD is <a href="#safe">safe</a>, <a href="#idempotent">idempotent</a>, <a href="#cacheable">cacheable</a>.
+HEAD is not allowed in the <em>HTML forms</em>.</p>
+<p>For example, an url makes a request for large download.
+Instead of actually downloading the data, HEAD request could read its <code>Content-Length</code> header to check the filesize without actually downloading the file.</p>
+<p>Another example is hashing.
+Suppose a browser is caching data.
+Before making any GET request to a particular url to retrieve the actual data everytime, we can make HEAD request to check the hash code if the data is changed or not.
+If not changed, we can show the data from the cache.
+Or if changed, we can make the GET request to retrieve the actual data.</p>
+<ul>
+<li>
+<h4 id="http-headers">HTTP HEADERS</h4>
+</li>
+</ul>
+<p><code>HEADERS</code> let the client &amp; server pass additional informatiion with an HTTP request or response.
+A header passes data in <em>key-value</em> pair syntax, having <code>:</code> between them as separator.
+A header dosen&rsquo;t hold actual data, but information of the data.
+There are various types of headers, for example, <em>General headers</em>, <em>Request headers</em>, <em>Response headers</em>, <em>Entity headers</em>.</p>
+<h3 id="connect">CONNECT</h3>
+<p>Http method <code>CONNECT</code> is used open a <em>tunnel</em> between client and server identified by the target resource.
+It starts a <em>two-way communication</em> between client &amp; server.
+<code>CONNECT</code> method can be used to access websites that use <em>SSL</em> or <em>HTTPS</em>.</p>
+<p>For example, the client asks the <em>HTTP proxy server</em> to tunnel <em>TCP connection</em> to desired destination using CONNECT method.
+The proxy server makes the connection on behalf of the client.
+When connection is established, the proxy server continues to proxy the TCP stream to and from the client.</p>
+<p>Some proxy servers might need authority to create a tunnel using <a href="#proxy-authorization">Proxy-Authorization</a> request header.</p>
+<p><code>CONNECT</code> has no request body, but has successful response body.
+It is not <a href="#safe">safe</a>, <a href="#idempotent">idempotent</a>, <a href="#cacheable">cacheable</a>.
+<code>CONNECT</code> is not allowed in the <em>HTML forms</em>.</p>
+<ul>
+<li>
+<h4 id="proxy-authorization">Proxy-Authorization</h4>
+</li>
+</ul>
+<p><code>Http Proxy-Authorization request header</code> contains the credential to authenticate a client to proxy server. It is required to pass with the request if server responded before with <code>407</code> <code>Proxy Authentication Required</code> status code with <code>Proxy-Authonticate</code> response header.</p>
+<p><code>Proxy-Authorization</code> syntax is:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">Proxy-Authorization: &lt;<span style="color:#f92672">type</span>&gt; &lt;<span style="color:#f92672">credentials</span>&gt;
+</code></pre></div><p>Here, <code>&lt;type&gt;</code> will be replaced with <code>Authentication type</code>.
+The most common type is <code>Basic</code>.</p>
+<p>the <code>&lt;credentials&gt;</code> will be replaced with client&rsquo;s credential.
+The credential is generated by following steps:</p>
+<ul>
+<li>The username and the password are combined with a colon (<code>:</code>) (example: <code>username:password</code>)</li>
+<li>Encode the resulting string into <strong>Base64</strong>.</li>
+</ul>
+<h3 id="options">OPTIONS</h3>
+<p>Http method <code>OPTIONS</code> provides response of what communcation options are permitted for targeted resource.
+<code>OPTIONS</code> can be used to identify what <strong>other Http methods</strong> are allowed for the specific resource.
+It is also used as <a href="#preflighted-requests-in-cors">preflightd request</a> by mordern browser to support <strong>CORS</strong>.
+Client can specify a url or use <code>*</code> for whole server to get list of allowed options with <code>OPTIONS</code> method.</p>
+<p>Popular server (for example: Tomcat) normally configure <code>OPTIONS</code> methods for whole server &amp; specific urls autometically.</p>
+<p><code>OPTIONS</code>  has no request body, but has successful response body.
+It is <a href="#safe">safe</a> &amp; <a href="#idempotent">idempotent</a>, but not <a href="#cacheable">cacheable</a>.
+<code>OPTIONS</code> is not allowed in the <em>HTML forms</em>.</p>
+<ul>
+<li>
+<h4 id="preflighted-requests-in-cors">Preflighted requests in CORS</h4>
+</li>
+</ul>
+<p>In mordern browsers, when from inside of any domain (for example, <code>a.com</code>), we try to call another domain&rsquo;s (<code>b.com</code>) any resource (<code>GET b.com/users</code> using <em>ajax</em> call), browsers don&rsquo;t call the method right-away.
+Instead it calls <code>OPTIONS b.com/users</code> first, to check if <code>a.com</code> is eligible to call <code>GET b.com</code>.
+If <code>b.com</code> grants <code>a.com</code> to call the <code>GET b.com/users</code>, then browser will make the request.
+This pre-check request is called <strong>Preflighted request</strong> and it is designed support <strong>CORS</strong> safety.</p>
+<p>Browser check some specific response header of the OPTIONS response to check CORS.
+These headers are:</p>
+<ul>
+<li><code>Access-Control-Allow-Origin</code> what <em>domains</em> other than itself is allowed to retrieve this specific resource.
+Using <code>*</code> can open for all domains. Using <code>*</code> is not recomended due to security reason.</li>
+<li><code>Access-Control-Allow-Methods</code> what <em>http methods</em> are allowed to be called.
+It is same as <code>Allowed</code> header, but it is used for CORS.</li>
+<li><code>Access-Control-Allow-Headers</code> what <em>response headers</em> are allowed to be read.</li>
+<li><code>Access-Control-Max-Age</code> what is the max time these allowed permissions can be cached.</li>
+</ul>
+<p>For example, browser makes the following Preflighted request:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">OPTIONS /users HTTP/1.1
+Host: b.com
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Connection: keep-alive
+Origin: https://a.com
+Access-Control-Request-Method: GET
+Access-Control-Request-Headers: X-PINGOTHER, Content-Type
+</code></pre></div><p>and the response is the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">HTTP/1.1 204 No Content
+Date: Mon, 01 Jan 2021 01:15:39 GMT
+Server: Apache/2.0.61 (Unix)
+Access-Control-Allow-Origin: https://a.com
+Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Headers: X-PINGOTHER, Content-Type
+Access-Control-Max-Age: 86400
+Vary: Accept-Encoding, Origin
+Keep-Alive: timeout=2, max=100
+Connection: Keep-Alive
+</code></pre></div><h3 id="trace">TRACE</h3>
+<p>Http method <code>TRACE</code> is used perform message loop-back test.
+It is mainly used for debugging purpose.
+The <em>loop-back test</em> means the caller will receive back what it has send to the server in request as response with some additional info.
+If successful, the response code will be <code>200</code> with the <em>content-type</em> of <code>message/http</code>.
+The final recipient is either the <strong>origin server</strong> or the first server to receive a <em>Max-Forwards</em> value of <code>0</code> in the request.</p>
+<p>For this method, <em>request</em> &amp; <em>response</em> have no body.
+<code>TRACE</code> is <a href="#safe">safe</a> &amp; <a href="#idempotent">idempotent</a>, but not <a href="#cacheable">cacheable</a>.
+<code>TRACE</code> is not allowed in the <em>HTML forms</em>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Although Http provides these all kind of methods to be used for all type of tasks, it is up to us developers to use them in our projects.
+We can use <code>GET</code> request to <strong>delete</strong> entity from our database, no one will stop us.
+But we have to understand, by doing so, our data becomes more vulnerable.</p>
+<p>Again, our web browsers use these various methods like <code>OPTIONS</code> all the time to ensure security.</p>
+<p>Whatever we use all these methods or not, it is always good to know these methods.</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>mysql in docker</title>
             <link>https://fahim44.github.io/posts/2021/01/mysql-in-docker/</link>
             <pubDate>Thu, 14 Jan 2021 21:55:03 +0600</pubDate>
@@ -18,12 +235,16 @@
 Goal We want to setup mysql using docker, but also want to provide our custom configurations for mysql and save mysql data into our machine. The reason of choosing docker over direct mysql installation into the machine is, we want to switch between mysql hosting machines with ease &amp;amp; start-stop mysql into our macine easily.
 Prerequisite Docker &amp;amp; Docker-compose should already be setup into your machine beforehand.</description>
             <content type="html"><![CDATA[<p>In this post, we will discuss how to setup &amp; run <em>mysql</em> using <em>docker</em></p>
+
+    <img src="/img/whale.webp"  alt="Whale"  class="center"  style="border-radius: 8px;"  />
+
+
 <h2 id="goal">Goal</h2>
 <p>We want to setup <em>mysql</em> using <em>docker</em>, but also want to provide our custom configurations for mysql and save mysql data into our machine.
 The reason of choosing docker over direct mysql installation into the machine is, we want to switch between mysql hosting machines with ease &amp; start-stop mysql into our macine easily.</p>
 <h2 id="prerequisite">Prerequisite</h2>
 <p><a href="https://www.docker.com/">Docker</a> &amp; <a href="https://docs.docker.com/compose/">Docker-compose</a> should already be setup into your machine beforehand.</p>
-<h2 id="config--data-directory">config &amp; data directory</h2>
+<h2 id="config--data-directory">Config &amp; data directory</h2>
 <p>First create two empty directories into your machine, anywhere you want with any name.
 One for <em>mysql-config</em>, to store mysql configuration file.
 Another for <em>mysql-data</em>, to persist database&rsquo;s data.</p>
@@ -118,7 +339,7 @@ sql-mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&
 
 <span style="color:#f92672">services</span>:
   <span style="color:#f92672">my_mysql</span>:
-    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">my_mysql</span>
+    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">%container_name%</span>
     <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mysql:latest</span>
     <span style="color:#f92672">environment</span>:
       <span style="color:#f92672">MYSQL_DATABASE</span>: <span style="color:#ae81ff">%db_name%</span>
@@ -136,7 +357,7 @@ sql-mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&
     <span style="color:#f92672">cap_add</span>:
       - <span style="color:#ae81ff">SYS_NICE</span>
 </code></pre></div><p>Don&rsquo;t forget to replace the db name, password, root-password, mysql-data &amp; mysql-config directory path in the compose file.</p>
-<h2 id="start-stop-mysql-via-docker">start-stop mysql via docker</h2>
+<h2 id="start-stop-mysql-via-docker">Start-stop mysql via docker</h2>
 <p>Start docker program into your machine. Then, open your <em>terminal</em> &amp; <code>cd</code> into compose file location.</p>
 <p>To start the service, execute:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose -f mysql_compose.yaml up
@@ -144,6 +365,9 @@ sql-mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&
 <p>To stop the service, stop the service by pressing <code>cntrl</code> + <code>c</code>.
 Then to remove the service from the stack, execute:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose -f mysql_compose.yaml down
+</code></pre></div><h2 id="access-mysql-cli">Access mysql cli</h2>
+<p>To access the started mysql&rsquo;s cli, you can execute the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -it %container_name% mysql --user root --password<span style="color:#f92672">=</span>%db_root_password%
 </code></pre></div>]]></content>
         </item>
         
