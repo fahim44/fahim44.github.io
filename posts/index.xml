@@ -9,6 +9,64 @@
         <atom:link href="https://fahim44.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>A.C.I.D.ity in database</title>
+            <link>https://fahim44.github.io/posts/2021/05/a.c.i.d.ity-in-database/</link>
+            <pubDate>Sun, 02 May 2021 00:04:34 +0600</pubDate>
+            
+            <guid>https://fahim44.github.io/posts/2021/05/a.c.i.d.ity-in-database/</guid>
+            <description>Atomicity, Consistency, Isolation, Durability (aka: ACID) are the properties of database transactions. These properties describe the data validity of any condition.
+Transaction Database Transaction means single or multiple related database operations executing sequencially which is counted as a single database unit; which guarantees data durability, consistency. For example, on any e-commerance website, if you place an order, an row is created against your account in order table, the available item count decrease for the ordered item from the item.</description>
+            <content type="html"><![CDATA[<p><strong>A</strong>tomicity, <strong>C</strong>onsistency, <strong>I</strong>solation, <strong>D</strong>urability (aka: <strong>ACID</strong>) are the properties of <a href="#transaction"><em>database transactions</em></a>.
+These properties describe the data validity of any condition.</p>
+<h2 id="transaction">Transaction</h2>
+<p>Database Transaction means single or multiple related database operations executing sequencially which is counted as a single database unit; which guarantees data durability, consistency.
+For example, on any e-commerance website, if you place an order, an row is created against your account in order table, the available item count decrease for the ordered item from the item.
+These two operations can be wrap around with transaction.
+The operations will be completed sequentially (in this example, first order will be created, then item count will be decreased).
+The transaction is completed when all operations completed successfully.
+If any operation for example <em>decrease item count</em> failed, all operations should be rolledback, meaning <em>create order</em> also be canceled.</p>
+<h2 id="acid">ACID</h2>
+<p><em>ACID</em> are the properties what make <a href="#transaction">transaction</a> successful.
+Let&rsquo;s discuss them one-by-one.</p>
+
+    <img src="/img/lemon_slice.webp"  alt="acid"  class="center"  style="border-radius: 8px;"  />
+
+
+<h3 id="atomicity">Atomicity</h3>
+<p>In one sentence, Atomicity means <em>all or nothing</em>.
+It describes, a transaction succeeds if and only if it&rsquo;s all database statements are successfully executed.
+If any of the statements failed, the remaining statements will not be execute &amp; the already executed update statements (CREATE, UPDATE, DELETE operations) will be rolled-back &amp; re-state previous state.
+There is no <em>partial failure</em> in transaction.
+For this property, a transaction is treated as <em>single unit</em>.</p>
+<h3 id="consistency">Consistency</h3>
+<p>Consistency means data can only move from <em>one valid state to another valid state</em>.
+For example, there are customer &amp; order tables in a relational database.
+Customer &amp; Order have one-to-many relationship between them.
+Meanning, a customer can have one-or-many orders, &amp; every order has a <code>customer_id</code> field which is linked with specific customer&rsquo;s <code>id</code>.
+Now, if we delete a customer, then this customer&rsquo;s order rows' <code>customer_id</code> will reference to wrong customer <code>id</code>.
+So, the data will become inconsistence.
+As here customer cannot move to <em>delete state</em> without clearing it&rsquo;s dependencies.
+So we have to delete all orders of this customer; or update the customer_id references to another valid customer before deleting the customer.</p>
+<p>If any transaction&rsquo;s execution violates database&rsquo;s consistency rule, the whole transaction will be rolled-back.</p>
+<h3 id="isolation">Isolation</h3>
+<p>In database, transactions are executed in isolated space.
+Isolation ensures that concurrently executed transactions leave the database in the same state as if they were executed sequentially.
+Now if multiple concurrently running transactions try to mutate same data at same time, one transaction will continue while another transaction must wait until the first transaction completes.</p>
+<h3 id="durability">Durability</h3>
+<p>Durability means once a transaction is commited, the changes will be saved no matter what happened.
+The future transactions can update the changes, but until then the database will always return the last updated value.
+This behavior should not changed even in a situation of system failure.
+To achieve this commited trasactions should be saved into <em>non-volatile memory</em>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Although <em>ACID</em> is vital requirement for databases, not all databases are succeed to achieve this.
+That because, to achieve ACID compliance a databse most likely need to sacrifice other important requirements, like, speed, easy scalability etc.
+To support main their focus, some databases don&rsquo;t give much focus on some ACID features.
+Normally, relational databases (mysql, oracle etc) are ACID compliant.
+On the other hand, most of the NoSQL databases (mongoDB, redis etc) lack some ACID features because they mainly focus on high speed &amp; high availability.</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>Http request methods</title>
             <link>https://fahim44.github.io/posts/2021/03/http-request-methods/</link>
             <pubDate>Fri, 26 Mar 2021 22:56:59 +0600</pubDate>
