@@ -9,6 +9,60 @@
         <atom:link href="https://fahim44.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Theorem of C.A.P</title>
+            <link>https://fahim44.github.io/posts/2021/06/theorem-of-c.a.p/</link>
+            <pubDate>Fri, 25 Jun 2021 22:10:08 +0600</pubDate>
+            
+            <guid>https://fahim44.github.io/posts/2021/06/theorem-of-c.a.p/</guid>
+            <description>The CAP (consistency, availability, partition tolerance) theorem is also known as Brewer’s Theorem which is named after computer scientist Professor Eric A. Brewer . It is a theorem regarding Distributed Database System first advanced by Professor Brewer during a talk on distributed system in 2000.
+Before jumping to the actual theorem, start first check out some key words.
+Distributed system In basic terms, A distributed system is a network of multiple nodes which work as a single node.</description>
+            <content type="html"><![CDATA[<p>The <strong>CAP</strong> (<em>consistency</em>, <em>availability</em>, <em>partition tolerance</em>) theorem is also known as <em>Brewer’s Theorem</em> which is named after
+<a href="https://en.wikipedia.org/wiki/Eric_Brewer_%28scientist%29" target="_blank">
+    computer scientist Professor Eric A. Brewer
+</a>.
+It is a theorem regarding <strong>Distributed Database System</strong> first advanced by Professor Brewer during a talk on distributed system in 2000.<br>
+Before jumping to the actual theorem, start first check out some key words.</p>
+<h2 id="distributed-system">Distributed system</h2>
+<p>In basic terms, A distributed system is a <em>network</em> of multiple nodes which work as a single node.
+Here node is physical or virtual machines.<br>
+<em>Microservice</em> architecture is a good example of distributed system.
+Here separate machines &amp; applications works together which seems like a single entity to end-user.
+This applications can be horizontally scalable accross multiple machines.
+They have independent states &amp; operate conurrently. They communicate with each other using various messeging protocols.
+They can also fail independently without taking down the whole network it.</p>
+<p><em>Distributed database system</em> stores data on more than one database node at the same time.
+When we work with billions of data with &ldquo;<em>available everywhere</em>&rdquo; mentality, we need to consider the distributed system.<br>
+Basically, all clouds applications are distributed system.</p>
+<h2 id="consistency">Consistency</h2>
+<p>Consistency means, end-users retrieve same data at a same time, no matter witch node they are connect to.
+To achieve this fully, when data is written to any node, it must be replicated to others nodes right away &amp; they retrieval of the data should be unavailable until all nodes write the data.<br>
+Please note that, <em><strong>This consistency &amp; Consistency property of ACID don&rsquo;t provide same meaning.</strong></em></p>
+<h2 id="availability">Availability</h2>
+<p>Availability means, when an end-user requested any data, he will receive response; even if one or more nodes are down.
+All active nodes should return valid response.</p>
+<h2 id="partition-tolerance">Partition tolerance</h2>
+<p>Any distributed system&rsquo;s backbone is communication process.
+Partition tolerance means, whole sytem should keep working dispite any number of communication breakdowns happend.</p>
+
+    <img src="/img/cap.webp"  alt="cap"  class="center"  style="border-radius: 8px;"  />
+
+
+<h2 id="cap-theorem">CAP theorem</h2>
+<p>In CAP theorem, Brewer states that; for a <em>distributed data store</em>, it is impossible to simultaneously provide more two out of three (<em>Consistency</em>, <em>Availability</em>, <em>Partition tolerance</em>) guarantees.<br>
+For example, a distributed database can fully support consistency, availability; but will fail to gurantee full partition tolerance gurantee.</p>
+<p>A database which gurantee consistency and availability is called <strong>CA database</strong>.
+For example, mongoDB, redis</p>
+<p>A database which gurantee consistency and partition tolerance is called <strong>CP database</strong>.
+For example, mysql.</p>
+<p>A database which gurantee availability and partition tolerance is called <strong>AP database</strong>.
+For example, cassandra, couchDB.
+Cassandra called itself eventually consistent, because it can be configured to become CA instead of AP and vice-versa.</p>
+<p>Please note that, these databases have all three features, but can only fully support maxium any two of them.</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>A.C.I.D.ity in database</title>
             <link>https://fahim44.github.io/posts/2021/05/a.c.i.d.ity-in-database/</link>
             <pubDate>Sun, 02 May 2021 00:04:34 +0600</pubDate>
@@ -614,7 +668,7 @@ Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672
 The difference is <em>map</em>&rsquo;s <em>Function.apply</em> method takes unwrapped value; where <em>flatMap</em> takes Optional wrapped value, unwrap it first, then transfrom it.</p>
 <p>Suppose we have the following,</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hero</span> <span style="color:#f92672">{</span>
-      
+
   <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
 
   <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Hero</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>

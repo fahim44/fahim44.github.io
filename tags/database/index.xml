@@ -6,7 +6,18 @@
     <description>Recent content in database on Fahim Salam Chowdhury</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 May 2021 00:04:34 +0600</lastBuildDate><atom:link href="https://fahim44.github.io/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Jun 2021 22:10:08 +0600</lastBuildDate><atom:link href="https://fahim44.github.io/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Theorem of C.A.P</title>
+      <link>https://fahim44.github.io/posts/2021/06/theorem-of-c.a.p/</link>
+      <pubDate>Fri, 25 Jun 2021 22:10:08 +0600</pubDate>
+      
+      <guid>https://fahim44.github.io/posts/2021/06/theorem-of-c.a.p/</guid>
+      <description>The CAP (consistency, availability, partition tolerance) theorem is also known as Brewer’s Theorem which is named after computer scientist Professor Eric A. Brewer . It is a theorem regarding Distributed Database System first advanced by Professor Brewer during a talk on distributed system in 2000.
+Before jumping to the actual theorem, start first check out some key words.
+Distributed system In basic terms, A distributed system is a network of multiple nodes which work as a single node.</description>
+    </item>
+    
     <item>
       <title>A.C.I.D.ity in database</title>
       <link>https://fahim44.github.io/posts/2021/05/a.c.i.d.ity-in-database/</link>
