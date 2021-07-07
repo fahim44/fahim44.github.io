@@ -9,6 +9,127 @@
         <atom:link href="https://fahim44.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
+            <title>Squashing the commits</title>
+            <link>https://fahim44.github.io/posts/2021/07/squashing-the-commits/</link>
+            <pubDate>Tue, 06 Jul 2021 20:37:49 +0600</pubDate>
+            
+            <guid>https://fahim44.github.io/posts/2021/07/squashing-the-commits/</guid>
+            <description>Imagine on your workplace, your team uses git for verson control. You were assigned with a new feature. You had created a separate feature branch for the task &amp;amp; start working on it. You have worked on several days on that branch, made some intermediate commits as a good developer. Now you work is done &amp;amp; it is ready to be merged. And your git log --pretty=oneline looks like this:</description>
+            <content type="html"><![CDATA[<p>Imagine on your workplace, your team uses git for verson control.
+You were assigned with a new feature.
+You had created a separate <em>feature</em> branch for the task &amp; start working on it.
+You have worked on several days on that branch, made some intermediate commits as a good developer.
+Now you work is done &amp; it is ready to be merged.
+And your <code>git log --pretty=oneline</code> looks like this:</p>
+<pre><code>f6a02710e4395b3f411faa6232ac1dba06012df3 ready newCoolFeature
+15c9fe14958a6bbf7fa56475f59eaca53eb09364 ready initial version
+e5c6deffd703ae684e7fe359dfa787acc6b96de7 add missing file
+72944d1f4456b72a62f24542927acf10b83d7ab5 fix typo
+609384deb3f5720993d5ca69ee48f3cfe8587bef initialize new cool feature
+d5cd3b96a1010b22e20d7e1e4e39a7f8144dc9fb v1.1.1
+</code></pre><p>Here first 5 commits are related to your feature.
+To maintain clean git history, you want to merge single commit to main branch instead of 5.
+Here git squash comes into play.<br>
+It will <em>squash</em> these 5 commits into one single commit, altering their commit histories but saving their actual changes.</p>
+
+    <img src="/img/squash.webp"  alt="cap"  class="center"  style="border-radius: 8px;"  />
+
+
+<h2 id="what-is-it">What is it</h2>
+<p>Git squash means take multiple existing commits and combine them into a single commit.<br>
+But, there is no stand-alone <em>git squash</em> command in git.
+Instead <em>squash</em> is an option which can be used in other git commands.
+Mostly squash is used in the <em>interactive rebase</em> (<code>git rebase -i</code>) command.<br>
+Interactive rebase has options like <em>pick</em>, <em>reword</em>, <em>edit</em>, <em>squash</em>, <em>fixup</em>, <em>exec</em>, <em>break</em>, <em>drop</em>, <em>label</em>, <em>reset</em>, <em>merge</em>. Squashing done using various combination of these options, mostly <em>pick</em> &amp; <em>squash</em>.<br>
+<em>pick</em> means don&rsquo;t change anything to the selected commit.<br>
+<em>squash</em> means take the selected commit&rsquo;s changes, meld the changes to its previous commit &amp; update the previous commit&rsquo;s message, append selected commit&rsquo;s message to the end of the previous commit&rsquo;s messaege; remove the selected commits.<br>
+<em>fixup</em> works same as <em>squash</em> but it doesn&rsquo;t change previous commit&rsquo;s message.</p>
+<h2 id="how-to">How to</h2>
+<p>To squash the commits of the example, lets first <em>checkout</em> to our feature branch &amp; run the following command.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git rebase -i HEAD~5
+</code></pre></div><p>This command means, <em><strong>rebase 5 commits from HEAD going descending in interative mode</strong></em>.
+This command will open editor with following pre-define texts.</p>
+<pre><code>pick 609384d initialize new cool feature
+pick 72944d1 fix typo
+pick e5c6def add missing file
+pick 15c9fe1 ready initial version
+pick f6a0271 ready newCooolFeature
+
+# Rebase d5cd3b9..f6a0271 onto 15c9fe1 (5 commands)
+#
+# Commands:
+# p, pick &lt;commit&gt; = use commit
+# r, reword &lt;commit&gt; = use commit, but edit the commit message
+# e, edit &lt;commit&gt; = use commit, but stop for amending
+# s, squash &lt;commit&gt; = use commit, but meld into previous commit
+# f, fixup &lt;commit&gt; = like &quot;squash&quot;, but discard this commit's log message
+# x, exec &lt;command&gt; = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop &lt;commit&gt; = remove commit
+# l, label &lt;label&gt; = label current HEAD with a name
+# t, reset &lt;label&gt; = reset HEAD to a label
+# m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c &lt;commit&gt; to reword the commit message.
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+</code></pre><p>Here, we need to work with first 5 lines.
+Rest of lines are actually comments regarding interactive rebase&rsquo;s options.<br>
+Here we want to squash commit <code>72944d1</code> to <code>609384d</code> and meld the changes to new single commit.
+To achieve this, we change the lines the following &amp; save the changes and exit the editor.</p>
+<pre><code>pick 609384d initialize new cool feature
+squash 72944d1 fix typo
+squash e5c6def add missing file
+squash 15c9fe1 ready initial version
+squash f6a0271 ready newCooolFeature
+</code></pre><p>After saving the changes, another editor window will pop up with the following texts.</p>
+<pre><code>This is a combination of 5 commits.
+# This is the 1st commit message:
+
+initialize new cool feature
+
+# This is the commit message #2:
+
+fix typo
+
+# This is the commit message #3:
+
+add missing file
+
+# This is the commit message #4:
+
+ready initial version
+
+# This is the commit message #5:
+
+ready newCooolFeature
+</code></pre><p>This will be the new commit message for new commit.
+We simply save the changes &amp; exit the editor.<br>
+That&rsquo;s it, our git squash is done!<br>
+Now if we run <code>git log --pretty=oneline</code> again, we will see the following output,</p>
+<pre><code>c27c3d8922c636d9a825fc3edff06511034b7096 initialize new cool feature
+d5cd3b96a1010b22e20d7e1e4e39a7f8144dc9fb v1.1.1
+</code></pre><p>All our 5 commit&rsquo;s changes are ammended one after another serially &amp; created new commit <code>c27c3d8922c636d9a825fc3edff06511034b7096</code>.
+<code>d5cd3b96a1010b22e20d7e1e4e39a7f8144dc9fb</code> now points to the new commit.</p>
+<h2 id="end-game">End game</h2>
+<p>Squashing git commits is a very powerful feature.
+But it is dangerous too.
+As it make git history clean, in the same time it removes some commit history too.<br>
+Some time you may want to save intermediate commits, so you can go to the specific commit &amp; have a look.
+With git squash you will loose this ability.<br>
+Git squash is a double edge sword.
+You need to be extra careful when using this feature.</p>
+]]></content>
+        </item>
+        
+        <item>
             <title>Theorem of C.A.P</title>
             <link>https://fahim44.github.io/posts/2021/06/theorem-of-c.a.p/</link>
             <pubDate>Fri, 25 Jun 2021 22:10:08 +0600</pubDate>
