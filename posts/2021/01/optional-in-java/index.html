@@ -44,8 +44,8 @@ The Billion Dollar Mistake Tony Hoare, developer of quicksort algorithm, invente
 
 <meta itemprop="name" content="Optional in Java">
 <meta itemprop="description" content="Java 8 has some cool features introduced on it&rsquo;s release, for example, lamda, method reference etc. One of the major features is Optional. Today, we will discuss what optional is, why it is introduced &amp; basic use case of it.
-The Billion Dollar Mistake Tony Hoare, developer of quicksort algorithm, invented null reference in 1965. In 2009, he described it as a Billion Dollar Mistake &amp; apologized for inventing it. Now what is Null Reference &amp; why is it called The Billion Dollar Mistake?"><meta itemprop="datePublished" content="2021-01-01T18:09:06&#43;06:00" />
-<meta itemprop="dateModified" content="2021-01-01T18:09:06&#43;06:00" />
+The Billion Dollar Mistake Tony Hoare, developer of quicksort algorithm, invented null reference in 1965. In 2009, he described it as a Billion Dollar Mistake &amp; apologized for inventing it. Now what is Null Reference &amp; why is it called The Billion Dollar Mistake?"><meta itemprop="datePublished" content="2021-01-01T18:09:06+06:00" />
+<meta itemprop="dateModified" content="2021-01-01T18:09:06+06:00" />
 <meta itemprop="wordCount" content="1532"><meta itemprop="image" content="https://fahim44.github.io/"/>
 <meta itemprop="keywords" content="java," />
 <meta name="twitter:card" content="summary_large_image"/>
@@ -62,8 +62,8 @@ The Billion Dollar Mistake Tony Hoare, developer of quicksort algorithm, invente
 The Billion Dollar Mistake Tony Hoare, developer of quicksort algorithm, invented null reference in 1965. In 2009, he described it as a Billion Dollar Mistake &amp; apologized for inventing it. Now what is Null Reference &amp; why is it called The Billion Dollar Mistake?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fahim44.github.io/posts/2021/01/optional-in-java/" /><meta property="og:image" content="https://fahim44.github.io/"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-01-01T18:09:06&#43;06:00" />
-<meta property="article:modified_time" content="2021-01-01T18:09:06&#43;06:00" />
+<meta property="article:published_time" content="2021-01-01T18:09:06+06:00" />
+<meta property="article:modified_time" content="2021-01-01T18:09:06+06:00" />
 
 
 
@@ -319,16 +319,16 @@ Now what is <strong>Null Reference</strong> &amp; why is it called <strong>The B
 <p>In computing, a null pointer or null reference is a value saved for indicating that the pointer or reference does not refer to a valid object.</p>
 </blockquote>
 <p>If you are familier with <em>java</em> or any of its close cousins, you should read out the following example easily:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String name <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">());</span>
-</code></pre></div><p>Can you guess what the output here will be?
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">());</span>
+</span></span></code></pre></div><p>Can you guess what the output here will be?
 Yes, you are right, it will throw the infamous <code>NullPointerException</code> here.
 Because <code>name</code> is not initialized here &amp; we are calling <code>String.length()</code> on it without check! So, the null safe solution of this issue is,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String name <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>name <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">());</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Now why I have reffered NullPointerException as <strong>infamous exception</strong> you may ask.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>name <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Now why I have reffered NullPointerException as <strong>infamous exception</strong> you may ask.
 Because it is very common senario.
 If you have some experience with any mordern programming language (especially java), you probably encountered with it before.
 It&rsquo;s so common, for some cases, you might write hundreds of null checking blocks, still may miss some cases.
@@ -336,33 +336,33 @@ Again, we programmers are forgetful in nature, we miss the null check all the ti
 And in production, our piece of code faces-off against unwanted null reference and throws nullPointerException.</p>
 <h2 id="null-safety--optional">Null Safety &amp; Optional</h2>
 <p>Mordern languages, for example <strong>Kotlin</strong> provides <a href="https://kotlinlang.org/docs/reference/null-safety.html">Null Safety</a> (<strong>?</strong> operator), to solve the null-reference problem. For example, previous problem can be solved in kotlin like,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">var</span> name : String? = <span style="color:#66d9ef">null</span>
-name<span style="color:#f92672">?.</span>let {
-  print(<span style="color:#66d9ef">it</span>)
-}
-</code></pre></div><p>Null Safety in Kotlin using <a href="https://kotlinlang.org/docs/reference/null-safety.html#safe-calls">Safe Call Operator</a> (<code>?.</code>) is very easy to use &amp; understandable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> name : String? = <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>name<span style="color:#f92672">?.</span>let {
+</span></span><span style="display:flex;"><span>  print(<span style="color:#66d9ef">it</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Null Safety in Kotlin using <a href="https://kotlinlang.org/docs/reference/null-safety.html#safe-calls">Safe Call Operator</a> (<code>?.</code>) is very easy to use &amp; understandable.</p>
 <p>Sadly java still doesn&rsquo;t have any operator like the Kotlin&rsquo;s safe call operator.
 Instead Java-8 introduced <strong><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html">Optional</a></strong> wrapper class.
 Optional is a final class under the <em>java.util</em> package.
 It is a generic class which actually wraps around the actual value &amp; provides the null reference safety &amp; some additional operations regarding the null safety. Let&rsquo;s solve the problem with java optional.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">ifPresent</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()));</span>
-</code></pre></div><p>What The Heck!!! why are we using optional here for?
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">ifPresent</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()));</span>
+</span></span></code></pre></div><p>What The Heck!!! why are we using optional here for?
 The vanilla java solution (the <em><code>if(name != null)</code></em> check solution) is more simple and easy to understand solution.
 What is the benifit to use optional instead?</p>
 <p>The reason is my friend to forcefully remind us the issue.
 The <code>if (object != null)</code> checking solution is all perfect; no doubt about it.
 But that solution is valid when we are not forgetful.
 Suppose we have two blocks of code where the can-be-null object is used, but forget to check null in one of the blogs instead; then the null safety is garanteed again.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String name <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>name <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">());</span>
-<span style="color:#f92672">}</span>
-<span style="color:#f92672">....</span>
-<span style="color:#f92672">....</span>
-<span style="color:#f92672">....</span>
-Integer k <span style="color:#f92672">=</span> name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
-</code></pre></div><p>But if we wrap the object with optional, we must check for null everytime we need to use the object.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>name <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">....</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">....</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">....</span>
+</span></span><span style="display:flex;"><span>Integer k <span style="color:#f92672">=</span> name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+</span></span></code></pre></div><p>But if we wrap the object with optional, we must check for null everytime we need to use the object.
 It is very tedious I know, but better secured.</p>
 <h2 id="optional-in-java">Optional in Java</h2>
 <p>Now, we will see how we can create new optional &amp; some use-cases of it.</p>
@@ -373,92 +373,92 @@ It is very tedious I know, but better secured.</p>
 <ul>
 <li>
 <p>To create an empty optional, we can use <code>Optional.empty()</code> static method. Empty optional means that the <em>wrapped object</em> has no valid value.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span></code></pre></div></li>
 <li>
 <p>If any object has value for sure, we can wrap the object with optional using <code>Optional.of(...)</code> static method. It takes the object as param. When using <code>of</code> static method, we must be sure that object can&rsquo;t be null, if it becomes null for any case, <code>of</code> method will throw <code>NullPointerException</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <p>If any object has value or is null, we can wrap the object with optional using <code>Optional.ofNullable(...)</code> static method. It takes the object-in-question as param.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> invalidNameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">ofNullable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
-Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> validNameOptional   <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">ofNullable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> invalidNameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">ofNullable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> validNameOptional   <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">ofNullable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 </ul>
 </li>
 <li>
 <h3 id="checking-optionals-value">Checking Optional&rsquo;s value</h3>
 <ul>
 <li>If any Optional object has value present in it, <code>Optional.isPresent()</code> method will return <code>true</code>, otherwise <code>false</code>.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;This message should be printed.&#34;</span><span style="color:#f92672">);</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;This message should be printed.&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></li>
 <li>As revert of <em>isPresent</em> method, <code>Optional.isEmpty()</code> method will return <code>true</code> when optional object has no value in it, otherwise <code>false</code>.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name is empty. This message should be printed.&#34;</span><span style="color:#f92672">);</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name is empty. This message should be printed.&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></li>
 </ul>
 </li>
 <li>
 <h3 id="unwrapping-optionals-value">Unwrapping Optional&rsquo;s value</h3>
 <p>If any <code>Optional</code> is not empty, we can unwrap the Optional&rsquo;s Object using <code>Optional.get()</code> method.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
-Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <h3 id="conditional-blocks">Conditional blocks</h3>
 <ul>
 <li>
 <p>If we execute some logic whenever an Optional is not empty, we can use <code>Optional.ifPresent(...)</code> method, which takes a <code>Consumer</code> as param, which is invoked only when Optional has value.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">ifPresent</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">);</span>
-<span style="color:#f92672">});</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">ifPresent</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">});</span>
+</span></span></code></pre></div></li>
 <li>
 <p>When Optional is empty, we want to unwrap the Optional and pass an object as default value, we can use <code>Optional.orElse(...)</code>. This method takes an object which is the default value that we want to pass if the optional is empty.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElse</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
-Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElse</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>Optional.orElseGet(...)</code> is similar to <code>orElse(...)</code> method; the main difference is <code>orElse()</code> takes an object which will be returned if the the Optional is empty, and <code>orElseGet()</code> takes a <code>Supplier</code> interface as param, which will only be invoked when the Optional is empty.</p>
 <p>As <code>orElse</code> method directly returns the object provided to it, the default object should always be initiated before-hand when we use this.
 On the other hand, the default object only be created when Optional is empty when using <code>orElseGet</code>.
 That&rsquo;s why, when we deal with some <em>IO</em> operation / heavy Object (expensive object to be initiated) as default value, it is better to use <code>orElseGet</code> instead of <code>orElse</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElseGet</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
-Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElseGet</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>Optional.orElseThrow(...)</code> is similar to <code>orElseGet</code>, the difference is instead of returning default value when Optional is empty, <code>orElseThrow</code> will throw an exception. It takes a supplier as param which, provides the exception to be thrown.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElseThrow</span><span style="color:#f92672">(</span>CustomException<span style="color:#f92672">::</span><span style="color:#66d9ef">new</span><span style="color:#f92672">);</span>
-</code></pre></div><p><strong>java 10</strong> also has a no-arg <code>orElseThrow</code> method, which throws <code>NoSuchElelementException</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElseThrow</span><span style="color:#f92672">();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElseThrow</span><span style="color:#f92672">(</span>CustomException<span style="color:#f92672">::</span><span style="color:#66d9ef">new</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div><p><strong>java 10</strong> also has a no-arg <code>orElseThrow</code> method, which throws <code>NoSuchElelementException</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElseThrow</span><span style="color:#f92672">();</span>
+</span></span></code></pre></div></li>
 <li>
 <p>From <strong>Java 9</strong>, there is a new method called <code>Optional.or(...)</code>, which is similar to <code>orElseGet</code> as functionality but default in return type.
 Where, <code>orElse</code> and <code>orElseGet</code> unwrapped the optional object, <code>or</code> method doesn&rsquo;t unwrap &amp; return the <code>Optional&lt;Type&gt;</code>, so that we can perform further Optional related actions on it.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> anotherOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">or</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
-Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>anotherOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(),</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> anotherOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">or</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>anotherOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(),</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <blockquote>
 <p>If Optional not empty, do this&hellip; else, do that</p>
 </blockquote>
 <p>This is a common scenerio of Optional. To cover this flow into lamda, <strong>Java 9</strong> introduced <code>ifPresentOrElse(...)</code> method. It takes <em>Consumer</em> which is invoked when optional in not empty, and <em>Runnable</em> as second param which&rsquo;s <code>run</code> method is invoked when the optional is empty.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">ifPresentOrElse</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">),</span>
-                               <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;No name found!!!&#34;</span><span style="color:#f92672">));</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">ifPresentOrElse</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>                               <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;No name found!!!&#34;</span><span style="color:#f92672">));</span>
+</span></span></code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -469,49 +469,49 @@ nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">ifPr
 It takes <code>Predicate</code> as param and return Optional.
 If Optional is not empty, the pedicate&rsquo;s test method is invoked.
 If test method return true, filter method will return the <code>Optional&lt;value&gt;</code>, otherwise return <code>Optional.empty()</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> name<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;John&#34;</span><span style="color:#f92672">));</span>
-Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">(),</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> name<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;John&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">(),</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <p>For non-empty Optional, <code>Optional.map(...)</code> method transform the value to another value.
 It takes <code>Function</code> as param.
 <code>Function</code>&rsquo;s <code>apply</code> method takes the optional&rsquo;s value and returned new object of the expected type.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> lengthOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>String<span style="color:#f92672">::</span>length<span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> lengthOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>String<span style="color:#f92672">::</span>length<span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>Optional.flatMap(...)</code> is same as <code>Optional.map(...)</code>.
 The difference is <em>map</em>&rsquo;s <em>Function.apply</em> method takes unwrapped value; where <em>flatMap</em> takes Optional wrapped value, unwrap it first, then transfrom it.</p>
 <p>Suppose we have the following,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hero</span> <span style="color:#f92672">{</span>
-
-  <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
-
-  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Hero</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-
-  <span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">return</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">ofNullable</span><span style="color:#f92672">(</span>name<span style="color:#f92672">);</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Here, want A hero&rsquo;s name&rsquo;s <em>length</em> as optional.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hero</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Hero</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">ofNullable</span><span style="color:#f92672">(</span>name<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Here, want A hero&rsquo;s name&rsquo;s <em>length</em> as optional.
 If we use <code>map</code> method here:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>Hero<span style="color:#f92672">&gt;</span> heroOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Hero<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">));</span>
-Optional<span style="color:#f92672">&lt;</span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;&gt;</span> nameOptionalWrapper <span style="color:#f92672">=</span> heroOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>Hero<span style="color:#f92672">::</span>getName<span style="color:#f92672">);</span>
-Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> nameOptionalWrapper<span style="color:#f92672">.</span><span style="color:#a6e22e">orElse</span><span style="color:#f92672">(</span>Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">());</span>
-Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> nameLengthOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>String<span style="color:#f92672">::</span>length<span style="color:#f92672">);</span>
-</code></pre></div><p>In this case, if we use <code>flatMap</code> instead:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>Hero<span style="color:#f92672">&gt;</span> heroOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Hero<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">));</span>
-Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> heroOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">flatMap</span><span style="color:#f92672">(</span>Hero<span style="color:#f92672">::</span>getName<span style="color:#f92672">);</span>
-Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> nameLengthOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>String<span style="color:#f92672">::</span>length<span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Hero<span style="color:#f92672">&gt;</span> heroOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Hero<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;&gt;</span> nameOptionalWrapper <span style="color:#f92672">=</span> heroOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>Hero<span style="color:#f92672">::</span>getName<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> nameOptionalWrapper<span style="color:#f92672">.</span><span style="color:#a6e22e">orElse</span><span style="color:#f92672">(</span>Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> nameLengthOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>String<span style="color:#f92672">::</span>length<span style="color:#f92672">);</span>
+</span></span></code></pre></div><p>In this case, if we use <code>flatMap</code> instead:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Hero<span style="color:#f92672">&gt;</span> heroOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Hero<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> heroOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">flatMap</span><span style="color:#f92672">(</span>Hero<span style="color:#f92672">::</span>getName<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> nameLengthOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>String<span style="color:#f92672">::</span>length<span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <p><strong>Java 9</strong> introduced <code>Optional.stream()</code> method.
 It treats optional instance as a <code>Stream</code>.
 So we can use various <code>Stream API</code> functionality for optional, such as <em>collect</em>, <em>map</em>, <em>filter</em>, <em>flatMap</em> etc.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameList <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">());</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameList <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">());</span>
+</span></span></code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -559,7 +559,7 @@ So stick it in your mind,</p>
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2021</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://fahim44.github.io/">Fahim Salam Chowdhury</a></span>
             
@@ -582,7 +582,7 @@ So stick it in your mind,</p>
 
 
 
-<script type="text/javascript" src="https://fahim44.github.io/bundle.min.a254c28eea1d4ce2f83b5b9d88a75b5da9d98adbd5f45c5ce815adb55382105043ae37198e8775b73c3134a82967d03067d986f51c3e3fd47ec61a7204b2d435.js" integrity="sha512-olTCjuodTOL4O1udiKdbXanZitvV9Fxc6BWttVOCEFBDrjcZjod1tzwxNKgpZ9AwZ9mG9Rw&#43;P9R&#43;xhpyBLLUNQ=="></script>
+<script type="text/javascript" src="https://fahim44.github.io/bundle.min.e3e78717d8cb97d0021fbf7efc2aa9bafa7737ab7d13f1236ffc08bfed813ceef552d99e6da56bf5b869d45add0c7b45c8d830e6c46ea60cd88a0b9bf6ba9839.js" integrity="sha512-4&#43;eHF9jLl9ACH79&#43;/Cqpuvp3N6t9E/Ejb/wIv&#43;2BPO71UtmebaVr9bhp1FrdDHtFyNgw5sRupgzYigub9rqYOQ=="></script>
 
 
 

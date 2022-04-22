@@ -44,8 +44,8 @@ Transaction Database Transaction means single or multiple related database opera
 
 <meta itemprop="name" content="A.C.I.D.ity in database">
 <meta itemprop="description" content="Atomicity, Consistency, Isolation, Durability (aka: ACID) are the properties of database transactions. These properties describe the data validity of any condition.
-Transaction Database Transaction means single or multiple related database operations executing sequencially which is counted as a single database unit; which guarantees data durability, consistency. For example, on any e-commerance website, if you place an order, an row is created against your account in order table, the available item count decrease for the ordered item from the item."><meta itemprop="datePublished" content="2021-05-02T00:04:34&#43;06:00" />
-<meta itemprop="dateModified" content="2021-05-02T00:04:34&#43;06:00" />
+Transaction Database Transaction means single or multiple related database operations executing sequencially which is counted as a single database unit; which guarantees data durability, consistency. For example, on any e-commerance website, if you place an order, an row is created against your account in order table, the available item count decrease for the ordered item from the item."><meta itemprop="datePublished" content="2021-05-02T00:04:34+06:00" />
+<meta itemprop="dateModified" content="2021-05-02T00:04:34+06:00" />
 <meta itemprop="wordCount" content="553"><meta itemprop="image" content="https://fahim44.github.io/img/lemon_slice.webp">
 <meta itemprop="keywords" content="database," />
 <meta name="twitter:card" content="summary_large_image"/>
@@ -62,8 +62,8 @@ Transaction Database Transaction means single or multiple related database opera
 Transaction Database Transaction means single or multiple related database operations executing sequencially which is counted as a single database unit; which guarantees data durability, consistency. For example, on any e-commerance website, if you place an order, an row is created against your account in order table, the available item count decrease for the ordered item from the item." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://fahim44.github.io/posts/2021/05/a.c.i.d.ity-in-database/" /><meta property="og:image" content="https://fahim44.github.io/img/lemon_slice.webp" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-05-02T00:04:34&#43;06:00" />
-<meta property="article:modified_time" content="2021-05-02T00:04:34&#43;06:00" />
+<meta property="article:published_time" content="2021-05-02T00:04:34+06:00" />
+<meta property="article:modified_time" content="2021-05-02T00:04:34+06:00" />
 
 
 
@@ -332,7 +332,7 @@ For this property, a transaction is treated as <em>single unit</em>.</p>
 For example, there are customer &amp; order tables in a relational database.
 Customer &amp; Order have one-to-many relationship between them.
 Meanning, a customer can have one-or-many orders, &amp; every order has a <code>customer_id</code> field which is linked with specific customer&rsquo;s <code>id</code>.
-Now, if we delete a customer, then this customer&rsquo;s order rows' <code>customer_id</code> will reference to wrong customer <code>id</code>.
+Now, if we delete a customer, then this customer&rsquo;s order rows&rsquo; <code>customer_id</code> will reference to wrong customer <code>id</code>.
 So, the data will become inconsistence.
 As here customer cannot move to <em>delete state</em> without clearing it&rsquo;s dependencies.
 So we have to delete all orders of this customer; or update the customer_id references to another valid customer before deleting the customer.</p>
@@ -395,7 +395,7 @@ On the other hand, most of the NoSQL databases (mongoDB, redis etc) lack some AC
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2021</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://fahim44.github.io/">Fahim Salam Chowdhury</a></span>
             
@@ -418,7 +418,7 @@ On the other hand, most of the NoSQL databases (mongoDB, redis etc) lack some AC
 
 
 
-<script type="text/javascript" src="https://fahim44.github.io/bundle.min.a254c28eea1d4ce2f83b5b9d88a75b5da9d98adbd5f45c5ce815adb55382105043ae37198e8775b73c3134a82967d03067d986f51c3e3fd47ec61a7204b2d435.js" integrity="sha512-olTCjuodTOL4O1udiKdbXanZitvV9Fxc6BWttVOCEFBDrjcZjod1tzwxNKgpZ9AwZ9mG9Rw&#43;P9R&#43;xhpyBLLUNQ=="></script>
+<script type="text/javascript" src="https://fahim44.github.io/bundle.min.e3e78717d8cb97d0021fbf7efc2aa9bafa7737ab7d13f1236ffc08bfed813ceef552d99e6da56bf5b869d45add0c7b45c8d830e6c46ea60cd88a0b9bf6ba9839.js" integrity="sha512-4&#43;eHF9jLl9ACH79&#43;/Cqpuvp3N6t9E/Ejb/wIv&#43;2BPO71UtmebaVr9bhp1FrdDHtFyNgw5sRupgzYigub9rqYOQ=="></script>
 
 
 

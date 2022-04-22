@@ -21,7 +21,7 @@ You had created a separate <em>feature</em> branch for the task &amp; start work
 You have worked on several days on that branch, made some intermediate commits as a good developer.
 Now you work is done &amp; it is ready to be merged.
 And your <code>git log --pretty=oneline</code> looks like this:</p>
-<pre><code>f6a02710e4395b3f411faa6232ac1dba06012df3 ready newCoolFeature
+<pre tabindex="0"><code>f6a02710e4395b3f411faa6232ac1dba06012df3 ready newCoolFeature
 15c9fe14958a6bbf7fa56475f59eaca53eb09364 ready initial version
 e5c6deffd703ae684e7fe359dfa787acc6b96de7 add missing file
 72944d1f4456b72a62f24542927acf10b83d7ab5 fix typo
@@ -46,10 +46,10 @@ Interactive rebase has options like <em>pick</em>, <em>reword</em>, <em>edit</em
 <em>fixup</em> works same as <em>squash</em> but it doesn&rsquo;t change previous commit&rsquo;s message.</p>
 <h2 id="how-to">How to</h2>
 <p>To squash the commits of the example, lets first <em>checkout</em> to our feature branch &amp; run the following command.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git rebase -i HEAD~5
-</code></pre></div><p>This command means, <em><strong>rebase 5 commits from HEAD going descending in interative mode</strong></em>.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git rebase -i HEAD~5
+</span></span></code></pre></div><p>This command means, <em><strong>rebase 5 commits from HEAD going descending in interative mode</strong></em>.
 This command will open editor with following pre-define texts.</p>
-<pre><code>pick 609384d initialize new cool feature
+<pre tabindex="0"><code>pick 609384d initialize new cool feature
 pick 72944d1 fix typo
 pick e5c6def add missing file
 pick 15c9fe1 ready initial version
@@ -62,14 +62,14 @@ pick f6a0271 ready newCooolFeature
 # r, reword &lt;commit&gt; = use commit, but edit the commit message
 # e, edit &lt;commit&gt; = use commit, but stop for amending
 # s, squash &lt;commit&gt; = use commit, but meld into previous commit
-# f, fixup &lt;commit&gt; = like &quot;squash&quot;, but discard this commit's log message
+# f, fixup &lt;commit&gt; = like &#34;squash&#34;, but discard this commit&#39;s log message
 # x, exec &lt;command&gt; = run command (the rest of the line) using shell
-# b, break = stop here (continue rebase later with 'git rebase --continue')
+# b, break = stop here (continue rebase later with &#39;git rebase --continue&#39;)
 # d, drop &lt;commit&gt; = remove commit
 # l, label &lt;label&gt; = label current HEAD with a name
 # t, reset &lt;label&gt; = reset HEAD to a label
 # m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]
-# .       create a merge commit using the original merge commit's
+# .       create a merge commit using the original merge commit&#39;s
 # .       message (or the oneline, if no original merge commit was
 # .       specified). Use -c &lt;commit&gt; to reword the commit message.
 #
@@ -84,13 +84,13 @@ pick f6a0271 ready newCooolFeature
 Rest of lines are actually comments regarding interactive rebase&rsquo;s options.<br>
 Here we want to squash commit <code>72944d1</code> to <code>609384d</code> and meld the changes to new single commit.
 To achieve this, we change the lines the following &amp; save the changes and exit the editor.</p>
-<pre><code>pick 609384d initialize new cool feature
+<pre tabindex="0"><code>pick 609384d initialize new cool feature
 squash 72944d1 fix typo
 squash e5c6def add missing file
 squash 15c9fe1 ready initial version
 squash f6a0271 ready newCooolFeature
 </code></pre><p>After saving the changes, another editor window will pop up with the following texts.</p>
-<pre><code>This is a combination of 5 commits.
+<pre tabindex="0"><code>This is a combination of 5 commits.
 # This is the 1st commit message:
 
 initialize new cool feature
@@ -114,7 +114,7 @@ ready newCooolFeature
 We simply save the changes &amp; exit the editor.<br>
 That&rsquo;s it, our git squash is done!<br>
 Now if we run <code>git log --pretty=oneline</code> again, we will see the following output,</p>
-<pre><code>c27c3d8922c636d9a825fc3edff06511034b7096 initialize new cool feature
+<pre tabindex="0"><code>c27c3d8922c636d9a825fc3edff06511034b7096 initialize new cool feature
 d5cd3b96a1010b22e20d7e1e4e39a7f8144dc9fb v1.1.1
 </code></pre><p>All our 5 commit&rsquo;s changes are ammended one after another serially &amp; created new commit <code>c27c3d8922c636d9a825fc3edff06511034b7096</code>.
 <code>d5cd3b96a1010b22e20d7e1e4e39a7f8144dc9fb</code> now points to the new commit.</p>
@@ -218,7 +218,7 @@ For this property, a transaction is treated as <em>single unit</em>.</p>
 For example, there are customer &amp; order tables in a relational database.
 Customer &amp; Order have one-to-many relationship between them.
 Meanning, a customer can have one-or-many orders, &amp; every order has a <code>customer_id</code> field which is linked with specific customer&rsquo;s <code>id</code>.
-Now, if we delete a customer, then this customer&rsquo;s order rows' <code>customer_id</code> will reference to wrong customer <code>id</code>.
+Now, if we delete a customer, then this customer&rsquo;s order rows&rsquo; <code>customer_id</code> will reference to wrong customer <code>id</code>.
 So, the data will become inconsistence.
 As here customer cannot move to <em>delete state</em> without clearing it&rsquo;s dependencies.
 So we have to delete all orders of this customer; or update the customer_id references to another valid customer before deleting the customer.</p>
@@ -382,8 +382,8 @@ It is not <a href="#safe">safe</a>, <a href="#idempotent">idempotent</a>, <a hre
 </ul>
 <p><code>Http Proxy-Authorization request header</code> contains the credential to authenticate a client to proxy server. It is required to pass with the request if server responded before with <code>407</code> <code>Proxy Authentication Required</code> status code with <code>Proxy-Authonticate</code> response header.</p>
 <p><code>Proxy-Authorization</code> syntax is:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">Proxy-Authorization: &lt;<span style="color:#f92672">type</span>&gt; &lt;<span style="color:#f92672">credentials</span>&gt;
-</code></pre></div><p>Here, <code>&lt;type&gt;</code> will be replaced with <code>Authentication type</code>.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>Proxy-Authorization: &lt;<span style="color:#f92672">type</span>&gt; &lt;<span style="color:#f92672">credentials</span>&gt;
+</span></span></code></pre></div><p>Here, <code>&lt;type&gt;</code> will be replaced with <code>Authentication type</code>.
 The most common type is <code>Basic</code>.</p>
 <p>the <code>&lt;credentials&gt;</code> will be replaced with client&rsquo;s credential.
 The credential is generated by following steps:</p>
@@ -420,27 +420,27 @@ It is same as <code>Allowed</code> header, but it is used for CORS.</li>
 <li><code>Access-Control-Max-Age</code> what is the max time these allowed permissions can be cached.</li>
 </ul>
 <p>For example, browser makes the following Preflighted request:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">OPTIONS /users HTTP/1.1
-Host: b.com
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Language: en-us,en;q=0.5
-Accept-Encoding: gzip,deflate
-Connection: keep-alive
-Origin: https://a.com
-Access-Control-Request-Method: GET
-Access-Control-Request-Headers: X-PINGOTHER, Content-Type
-</code></pre></div><p>and the response is the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">HTTP/1.1 204 No Content
-Date: Mon, 01 Jan 2021 01:15:39 GMT
-Server: Apache/2.0.61 (Unix)
-Access-Control-Allow-Origin: https://a.com
-Access-Control-Allow-Methods: POST, GET, OPTIONS
-Access-Control-Allow-Headers: X-PINGOTHER, Content-Type
-Access-Control-Max-Age: 86400
-Vary: Accept-Encoding, Origin
-Keep-Alive: timeout=2, max=100
-Connection: Keep-Alive
-</code></pre></div><h3 id="trace">TRACE</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>OPTIONS /users HTTP/1.1
+</span></span><span style="display:flex;"><span>Host: b.com
+</span></span><span style="display:flex;"><span>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+</span></span><span style="display:flex;"><span>Accept-Language: en-us,en;q=0.5
+</span></span><span style="display:flex;"><span>Accept-Encoding: gzip,deflate
+</span></span><span style="display:flex;"><span>Connection: keep-alive
+</span></span><span style="display:flex;"><span>Origin: https://a.com
+</span></span><span style="display:flex;"><span>Access-Control-Request-Method: GET
+</span></span><span style="display:flex;"><span>Access-Control-Request-Headers: X-PINGOTHER, Content-Type
+</span></span></code></pre></div><p>and the response is the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>HTTP/1.1 204 No Content
+</span></span><span style="display:flex;"><span>Date: Mon, 01 Jan 2021 01:15:39 GMT
+</span></span><span style="display:flex;"><span>Server: Apache/2.0.61 (Unix)
+</span></span><span style="display:flex;"><span>Access-Control-Allow-Origin: https://a.com
+</span></span><span style="display:flex;"><span>Access-Control-Allow-Methods: POST, GET, OPTIONS
+</span></span><span style="display:flex;"><span>Access-Control-Allow-Headers: X-PINGOTHER, Content-Type
+</span></span><span style="display:flex;"><span>Access-Control-Max-Age: 86400
+</span></span><span style="display:flex;"><span>Vary: Accept-Encoding, Origin
+</span></span><span style="display:flex;"><span>Keep-Alive: timeout=2, max=100
+</span></span><span style="display:flex;"><span>Connection: Keep-Alive
+</span></span></code></pre></div><h3 id="trace">TRACE</h3>
 <p>Http method <code>TRACE</code> is used perform message loop-back test.
 It is mainly used for debugging purpose.
 The <em>loop-back test</em> means the caller will receive back what it has send to the server in request as response with some additional info.
@@ -482,126 +482,126 @@ The reason of choosing docker over direct mysql installation into the machine is
 One for <em>mysql-config</em>, to store mysql configuration file.
 Another for <em>mysql-data</em>, to persist database&rsquo;s data.</p>
 <p>Into the <em>mysql-config</em> directory, create <code>config-file.cnf</code> file with following configurations</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#</span>
-<span style="color:#75715e"># The MySQL database server configuration file.</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># One can use all long options that the program supports.</span>
-<span style="color:#75715e"># Run program with --help to get a list of available options and with</span>
-<span style="color:#75715e"># --print-defaults to see which it would actually understand and use.</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># For explanations see</span>
-<span style="color:#75715e"># http://dev.mysql.com/doc/mysql/en/server-system-variables.html</span>
-
-<span style="color:#75715e"># Here is entries for some specific programs</span>
-<span style="color:#75715e"># The following values assume you have at least 32M ram</span>
-
-<span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># * Basic Settings</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e">#user		= mysql</span>
-<span style="color:#75715e"># pid-file	= /var/run/mysqld/mysqld.pid</span>
-<span style="color:#75715e"># socket	= /var/run/mysqld/mysqld.sock</span>
-<span style="color:#75715e"># port		= 3306</span>
-<span style="color:#75715e"># datadir	= /var/lib/mysql</span>
-
-
-<span style="color:#75715e"># If MySQL is running as a replication slave, this should be</span>
-<span style="color:#75715e"># changed. Ref https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmpdir</span>
-<span style="color:#75715e"># tmpdir		= /tmp</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># Instead of skip-networking the default is now to listen only on</span>
-<span style="color:#75715e"># localhost which is more compatible and is not less secure.</span>
-<span style="color:#75715e">#bind-address		= 127.0.0.1</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># * Fine Tuning</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e">#key_buffer_size		= 16M</span>
-<span style="color:#75715e"># max_allowed_packet	= 64M</span>
-<span style="color:#75715e"># thread_stack		= 256K</span>
-
-<span style="color:#75715e"># thread_cache_size       = -1</span>
-
-<span style="color:#75715e"># This replaces the startup script and checks MyISAM tables if needed</span>
-<span style="color:#75715e"># the first time they are touched</span>
-<span style="color:#75715e">#myisam-recover-options  = BACKUP</span>
-
-<span style="color:#75715e"># max_connections        = 151</span>
-
-<span style="color:#75715e"># table_open_cache       = 4000</span>
-
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># * Logging and Replication</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># Both location gets rotated by the cronjob.</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># Log all queries</span>
-<span style="color:#75715e"># Be aware that this log type is a performance killer.</span>
-<span style="color:#75715e"># general_log_file        = /var/log/mysql/query.log</span>
-<span style="color:#75715e"># general_log             = 1</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># Error log - should be very few entries.</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e">#log_error = /var/log/mysql/error.log</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># Here you can see queries with especially long duration</span>
-<span style="color:#75715e"># slow_query_log		= 1</span>
-<span style="color:#75715e"># slow_query_log_file	= /var/log/mysql/mysql-slow.log</span>
-<span style="color:#75715e"># long_query_time = 2</span>
-<span style="color:#75715e"># log-queries-not-using-indexes</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># The following can be used as easy to replay backup logs or for replication.</span>
-<span style="color:#75715e"># note: if you are setting up a replication slave, see README.Debian about</span>
-<span style="color:#75715e">#       other settings you may need to change.</span>
-<span style="color:#75715e"># server-id		= 1</span>
-<span style="color:#75715e"># log_bin			= /var/log/mysql/mysql-bin.log</span>
-<span style="color:#75715e"># binlog_expire_logs_seconds	= 2592000</span>
-<span style="color:#75715e">#max_binlog_size   = 100M</span>
-<span style="color:#75715e"># binlog_do_db		= include_database_name</span>
-<span style="color:#75715e"># binlog_ignore_db	= include_database_name</span>
-sql-mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-</code></pre></div><p>you can modify this file as farr your requirements.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The MySQL database server configuration file.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># One can use all long options that the program supports.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run program with --help to get a list of available options and with</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># --print-defaults to see which it would actually understand and use.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For explanations see</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># http://dev.mysql.com/doc/mysql/en/server-system-variables.html</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Here is entries for some specific programs</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The following values assume you have at least 32M ram</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># * Basic Settings</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#user		= mysql</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># pid-file	= /var/run/mysqld/mysqld.pid</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># socket	= /var/run/mysqld/mysqld.sock</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># port		= 3306</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># datadir	= /var/lib/mysql</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If MySQL is running as a replication slave, this should be</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># changed. Ref https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_tmpdir</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># tmpdir		= /tmp</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Instead of skip-networking the default is now to listen only on</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># localhost which is more compatible and is not less secure.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#bind-address		= 127.0.0.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># * Fine Tuning</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#key_buffer_size		= 16M</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># max_allowed_packet	= 64M</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># thread_stack		= 256K</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># thread_cache_size       = -1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This replaces the startup script and checks MyISAM tables if needed</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># the first time they are touched</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#myisam-recover-options  = BACKUP</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># max_connections        = 151</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># table_open_cache       = 4000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># * Logging and Replication</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Both location gets rotated by the cronjob.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Log all queries</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Be aware that this log type is a performance killer.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># general_log_file        = /var/log/mysql/query.log</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># general_log             = 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Error log - should be very few entries.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#log_error = /var/log/mysql/error.log</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Here you can see queries with especially long duration</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># slow_query_log		= 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># slow_query_log_file	= /var/log/mysql/mysql-slow.log</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># long_query_time = 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># log-queries-not-using-indexes</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The following can be used as easy to replay backup logs or for replication.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># note: if you are setting up a replication slave, see README.Debian about</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#       other settings you may need to change.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># server-id		= 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># log_bin			= /var/log/mysql/mysql-bin.log</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># binlog_expire_logs_seconds	= 2592000</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#max_binlog_size   = 100M</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># binlog_do_db		= include_database_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># binlog_ignore_db	= include_database_name</span>
+</span></span><span style="display:flex;"><span>sql-mode <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span></code></pre></div><p>you can modify this file as farr your requirements.</p>
 <h2 id="docker-compose-file">docker-compose file</h2>
 <p>Now you have to create <em>docker-compose</em> file. For my case, this is <code>mysql_compose.yaml</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3.6&#39;</span>
-
-<span style="color:#f92672">networks</span>:
-  <span style="color:#f92672">my_app_net</span>:
-    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my_app_net</span>
-    <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">bridge</span>
-
-<span style="color:#f92672">services</span>:
-  <span style="color:#f92672">my_mysql</span>:
-    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">%container_name%</span>
-    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mysql:latest</span>
-    <span style="color:#f92672">environment</span>:
-      <span style="color:#f92672">MYSQL_DATABASE</span>: <span style="color:#ae81ff">%db_name%</span>
-      <span style="color:#f92672">MYSQL_USER</span>: <span style="color:#ae81ff">%db_user%</span>
-      <span style="color:#f92672">MYSQL_PASSWORD</span>: <span style="color:#ae81ff">%db_password%</span>
-      <span style="color:#f92672">MYSQL_ROOT_PASSWORD</span>: <span style="color:#ae81ff">%db_root_password%</span>
-    <span style="color:#f92672">ports</span>:
-      - <span style="color:#ae81ff">3306</span>:<span style="color:#ae81ff">3306</span>
-    <span style="color:#f92672">networks</span>:
-      - <span style="color:#ae81ff">my_app_net</span>
-    <span style="color:#f92672">volumes</span>:
-      - <span style="color:#e6db74">&#34;%absoloute_path_of_mysql_data_directory%:/var/lib/mysql&#34;</span>
-      - <span style="color:#e6db74">&#34;%absoloute_path_of_mysql_config_directory%:/etc/mysql/conf.d&#34;</span>
-    <span style="color:#f92672">restart</span>: <span style="color:#66d9ef">on</span>-<span style="color:#ae81ff">failure</span>
-    <span style="color:#f92672">cap_add</span>:
-      - <span style="color:#ae81ff">SYS_NICE</span>
-</code></pre></div><p>Don&rsquo;t forget to replace the db name, password, root-password, mysql-data &amp; mysql-config directory path in the compose file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3.6&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">my_app_net</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my_app_net</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">driver</span>: <span style="color:#ae81ff">bridge</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">my_mysql</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">%container_name%</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mysql:latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">MYSQL_DATABASE</span>: <span style="color:#ae81ff">%db_name%</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">MYSQL_USER</span>: <span style="color:#ae81ff">%db_user%</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">MYSQL_PASSWORD</span>: <span style="color:#ae81ff">%db_password%</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">MYSQL_ROOT_PASSWORD</span>: <span style="color:#ae81ff">%db_root_password%</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">3306</span>:<span style="color:#ae81ff">3306</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">my_app_net</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;%absoloute_path_of_mysql_data_directory%:/var/lib/mysql&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#e6db74">&#34;%absoloute_path_of_mysql_config_directory%:/etc/mysql/conf.d&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#66d9ef">on</span>-<span style="color:#ae81ff">failure</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">cap_add</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">SYS_NICE</span>
+</span></span></code></pre></div><p>Don&rsquo;t forget to replace the db name, password, root-password, mysql-data &amp; mysql-config directory path in the compose file.</p>
 <h2 id="start-stop-mysql-via-docker">Start-stop mysql via docker</h2>
 <p>Start docker program into your machine. Then, open your <em>terminal</em> &amp; <code>cd</code> into compose file location.</p>
 <p>To start the service, execute:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose -f mysql_compose.yaml up
-</code></pre></div><p>It will read the compose file, setup the service &amp; start to log-out the mysql logs.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose -f mysql_compose.yaml up
+</span></span></code></pre></div><p>It will read the compose file, setup the service &amp; start to log-out the mysql logs.</p>
 <p>To stop the service, stop the service by pressing <code>cntrl</code> + <code>c</code>.
 Then to remove the service from the stack, execute:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose -f mysql_compose.yaml down
-</code></pre></div><h2 id="access-mysql-cli">Access mysql cli</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose -f mysql_compose.yaml down
+</span></span></code></pre></div><h2 id="access-mysql-cli">Access mysql cli</h2>
 <p>To access the started mysql&rsquo;s cli, you can execute the following command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -it %container_name% mysql --user root --password<span style="color:#f92672">=</span>%db_root_password%
-</code></pre></div>]]></content>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker exec -it %container_name% mysql --user root --password<span style="color:#f92672">=</span>%db_root_password%
+</span></span></code></pre></div>]]></content>
         </item>
         
         <item>
@@ -624,16 +624,16 @@ Now what is <strong>Null Reference</strong> &amp; why is it called <strong>The B
 <p>In computing, a null pointer or null reference is a value saved for indicating that the pointer or reference does not refer to a valid object.</p>
 </blockquote>
 <p>If you are familier with <em>java</em> or any of its close cousins, you should read out the following example easily:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String name <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">());</span>
-</code></pre></div><p>Can you guess what the output here will be?
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">());</span>
+</span></span></code></pre></div><p>Can you guess what the output here will be?
 Yes, you are right, it will throw the infamous <code>NullPointerException</code> here.
 Because <code>name</code> is not initialized here &amp; we are calling <code>String.length()</code> on it without check! So, the null safe solution of this issue is,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String name <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>name <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">());</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Now why I have reffered NullPointerException as <strong>infamous exception</strong> you may ask.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>name <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Now why I have reffered NullPointerException as <strong>infamous exception</strong> you may ask.
 Because it is very common senario.
 If you have some experience with any mordern programming language (especially java), you probably encountered with it before.
 It&rsquo;s so common, for some cases, you might write hundreds of null checking blocks, still may miss some cases.
@@ -641,33 +641,33 @@ Again, we programmers are forgetful in nature, we miss the null check all the ti
 And in production, our piece of code faces-off against unwanted null reference and throws nullPointerException.</p>
 <h2 id="null-safety--optional">Null Safety &amp; Optional</h2>
 <p>Mordern languages, for example <strong>Kotlin</strong> provides <a href="https://kotlinlang.org/docs/reference/null-safety.html">Null Safety</a> (<strong>?</strong> operator), to solve the null-reference problem. For example, previous problem can be solved in kotlin like,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">var</span> name : String? = <span style="color:#66d9ef">null</span>
-name<span style="color:#f92672">?.</span>let {
-  print(<span style="color:#66d9ef">it</span>)
-}
-</code></pre></div><p>Null Safety in Kotlin using <a href="https://kotlinlang.org/docs/reference/null-safety.html#safe-calls">Safe Call Operator</a> (<code>?.</code>) is very easy to use &amp; understandable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> name : String? = <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>name<span style="color:#f92672">?.</span>let {
+</span></span><span style="display:flex;"><span>  print(<span style="color:#66d9ef">it</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Null Safety in Kotlin using <a href="https://kotlinlang.org/docs/reference/null-safety.html#safe-calls">Safe Call Operator</a> (<code>?.</code>) is very easy to use &amp; understandable.</p>
 <p>Sadly java still doesn&rsquo;t have any operator like the Kotlin&rsquo;s safe call operator.
 Instead Java-8 introduced <strong><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html">Optional</a></strong> wrapper class.
 Optional is a final class under the <em>java.util</em> package.
 It is a generic class which actually wraps around the actual value &amp; provides the null reference safety &amp; some additional operations regarding the null safety. Let&rsquo;s solve the problem with java optional.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">ifPresent</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()));</span>
-</code></pre></div><p>What The Heck!!! why are we using optional here for?
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">ifPresent</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()));</span>
+</span></span></code></pre></div><p>What The Heck!!! why are we using optional here for?
 The vanilla java solution (the <em><code>if(name != null)</code></em> check solution) is more simple and easy to understand solution.
 What is the benifit to use optional instead?</p>
 <p>The reason is my friend to forcefully remind us the issue.
 The <code>if (object != null)</code> checking solution is all perfect; no doubt about it.
 But that solution is valid when we are not forgetful.
 Suppose we have two blocks of code where the can-be-null object is used, but forget to check null in one of the blogs instead; then the null safety is garanteed again.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String name <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
-<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>name <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">());</span>
-<span style="color:#f92672">}</span>
-<span style="color:#f92672">....</span>
-<span style="color:#f92672">....</span>
-<span style="color:#f92672">....</span>
-Integer k <span style="color:#f92672">=</span> name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
-</code></pre></div><p>But if we wrap the object with optional, we must check for null everytime we need to use the object.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>name <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">....</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">....</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">....</span>
+</span></span><span style="display:flex;"><span>Integer k <span style="color:#f92672">=</span> name<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+</span></span></code></pre></div><p>But if we wrap the object with optional, we must check for null everytime we need to use the object.
 It is very tedious I know, but better secured.</p>
 <h2 id="optional-in-java">Optional in Java</h2>
 <p>Now, we will see how we can create new optional &amp; some use-cases of it.</p>
@@ -678,92 +678,92 @@ It is very tedious I know, but better secured.</p>
 <ul>
 <li>
 <p>To create an empty optional, we can use <code>Optional.empty()</code> static method. Empty optional means that the <em>wrapped object</em> has no valid value.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span></code></pre></div></li>
 <li>
 <p>If any object has value for sure, we can wrap the object with optional using <code>Optional.of(...)</code> static method. It takes the object as param. When using <code>of</code> static method, we must be sure that object can&rsquo;t be null, if it becomes null for any case, <code>of</code> method will throw <code>NullPointerException</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <p>If any object has value or is null, we can wrap the object with optional using <code>Optional.ofNullable(...)</code> static method. It takes the object-in-question as param.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> invalidNameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">ofNullable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
-Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> validNameOptional   <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">ofNullable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> invalidNameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">ofNullable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> validNameOptional   <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">ofNullable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 </ul>
 </li>
 <li>
 <h3 id="checking-optionals-value">Checking Optional&rsquo;s value</h3>
 <ul>
 <li>If any Optional object has value present in it, <code>Optional.isPresent()</code> method will return <code>true</code>, otherwise <code>false</code>.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;This message should be printed.&#34;</span><span style="color:#f92672">);</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;This message should be printed.&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></li>
 <li>As revert of <em>isPresent</em> method, <code>Optional.isEmpty()</code> method will return <code>true</code> when optional object has no value in it, otherwise <code>false</code>.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name is empty. This message should be printed.&#34;</span><span style="color:#f92672">);</span>
-<span style="color:#f92672">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name is empty. This message should be printed.&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div></li>
 </ul>
 </li>
 <li>
 <h3 id="unwrapping-optionals-value">Unwrapping Optional&rsquo;s value</h3>
 <p>If any <code>Optional</code> is not empty, we can unwrap the Optional&rsquo;s Object using <code>Optional.get()</code> method.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
-Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <h3 id="conditional-blocks">Conditional blocks</h3>
 <ul>
 <li>
 <p>If we execute some logic whenever an Optional is not empty, we can use <code>Optional.ifPresent(...)</code> method, which takes a <code>Consumer</code> as param, which is invoked only when Optional has value.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">ifPresent</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
-  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">);</span>
-<span style="color:#f92672">});</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">ifPresent</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">});</span>
+</span></span></code></pre></div></li>
 <li>
 <p>When Optional is empty, we want to unwrap the Optional and pass an object as default value, we can use <code>Optional.orElse(...)</code>. This method takes an object which is the default value that we want to pass if the optional is empty.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElse</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
-Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElse</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>Optional.orElseGet(...)</code> is similar to <code>orElse(...)</code> method; the main difference is <code>orElse()</code> takes an object which will be returned if the the Optional is empty, and <code>orElseGet()</code> takes a <code>Supplier</code> interface as param, which will only be invoked when the Optional is empty.</p>
 <p>As <code>orElse</code> method directly returns the object provided to it, the default object should always be initiated before-hand when we use this.
 On the other hand, the default object only be created when Optional is empty when using <code>orElseGet</code>.
 That&rsquo;s why, when we deal with some <em>IO</em> operation / heavy Object (expensive object to be initiated) as default value, it is better to use <code>orElseGet</code> instead of <code>orElse</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElseGet</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
-Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElseGet</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>name<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>Optional.orElseThrow(...)</code> is similar to <code>orElseGet</code>, the difference is instead of returning default value when Optional is empty, <code>orElseThrow</code> will throw an exception. It takes a supplier as param which, provides the exception to be thrown.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElseThrow</span><span style="color:#f92672">(</span>CustomException<span style="color:#f92672">::</span><span style="color:#66d9ef">new</span><span style="color:#f92672">);</span>
-</code></pre></div><p><strong>java 10</strong> also has a no-arg <code>orElseThrow</code> method, which throws <code>NoSuchElelementException</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElseThrow</span><span style="color:#f92672">();</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElseThrow</span><span style="color:#f92672">(</span>CustomException<span style="color:#f92672">::</span><span style="color:#66d9ef">new</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div><p><strong>java 10</strong> also has a no-arg <code>orElseThrow</code> method, which throws <code>NoSuchElelementException</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>String name <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">orElseThrow</span><span style="color:#f92672">();</span>
+</span></span></code></pre></div></li>
 <li>
 <p>From <strong>Java 9</strong>, there is a new method called <code>Optional.or(...)</code>, which is similar to <code>orElseGet</code> as functionality but default in return type.
 Where, <code>orElse</code> and <code>orElseGet</code> unwrapped the optional object, <code>or</code> method doesn&rsquo;t unwrap &amp; return the <code>Optional&lt;Type&gt;</code>, so that we can perform further Optional related actions on it.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
-Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> anotherOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">or</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
-Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>anotherOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(),</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> anotherOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">or</span><span style="color:#f92672">(()</span> <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>anotherOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(),</span> <span style="color:#e6db74">&#34;anonymous&#34;</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <blockquote>
 <p>If Optional not empty, do this&hellip; else, do that</p>
 </blockquote>
 <p>This is a common scenerio of Optional. To cover this flow into lamda, <strong>Java 9</strong> introduced <code>ifPresentOrElse(...)</code> method. It takes <em>Consumer</em> which is invoked when optional in not empty, and <em>Runnable</em> as second param which&rsquo;s <code>run</code> method is invoked when the optional is empty.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">ifPresentOrElse</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">),</span>
-                               <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;No name found!!!&#34;</span><span style="color:#f92672">));</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">ifPresentOrElse</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>name<span style="color:#f92672">),</span>
+</span></span><span style="display:flex;"><span>                               <span style="color:#f92672">()</span> <span style="color:#f92672">-&gt;</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;No name found!!!&#34;</span><span style="color:#f92672">));</span>
+</span></span></code></pre></div></li>
 </ul>
 </li>
 <li>
@@ -774,49 +774,49 @@ nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">ifPr
 It takes <code>Predicate</code> as param and return Optional.
 If Optional is not empty, the pedicate&rsquo;s test method is invoked.
 If test method return true, filter method will return the <code>Optional&lt;value&gt;</code>, otherwise return <code>Optional.empty()</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> name<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;John&#34;</span><span style="color:#f92672">));</span>
-Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">(),</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>name <span style="color:#f92672">-&gt;</span> name<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;John&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>Assert<span style="color:#f92672">.</span><span style="color:#a6e22e">assertEquals</span><span style="color:#f92672">(</span>nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">isPresent</span><span style="color:#f92672">(),</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <p>For non-empty Optional, <code>Optional.map(...)</code> method transform the value to another value.
 It takes <code>Function</code> as param.
 <code>Function</code>&rsquo;s <code>apply</code> method takes the optional&rsquo;s value and returned new object of the expected type.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
-Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> lengthOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>String<span style="color:#f92672">::</span>length<span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> lengthOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>String<span style="color:#f92672">::</span>length<span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>Optional.flatMap(...)</code> is same as <code>Optional.map(...)</code>.
 The difference is <em>map</em>&rsquo;s <em>Function.apply</em> method takes unwrapped value; where <em>flatMap</em> takes Optional wrapped value, unwrap it first, then transfrom it.</p>
 <p>Suppose we have the following,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hero</span> <span style="color:#f92672">{</span>
-
-  <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
-
-  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Hero</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
-
-  <span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">return</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">ofNullable</span><span style="color:#f92672">(</span>name<span style="color:#f92672">);</span>
-  <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><p>Here, want A hero&rsquo;s name&rsquo;s <em>length</em> as optional.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Hero</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Hero</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getName</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">ofNullable</span><span style="color:#f92672">(</span>name<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Here, want A hero&rsquo;s name&rsquo;s <em>length</em> as optional.
 If we use <code>map</code> method here:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>Hero<span style="color:#f92672">&gt;</span> heroOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Hero<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">));</span>
-Optional<span style="color:#f92672">&lt;</span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;&gt;</span> nameOptionalWrapper <span style="color:#f92672">=</span> heroOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>Hero<span style="color:#f92672">::</span>getName<span style="color:#f92672">);</span>
-Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> nameOptionalWrapper<span style="color:#f92672">.</span><span style="color:#a6e22e">orElse</span><span style="color:#f92672">(</span>Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">());</span>
-Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> nameLengthOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>String<span style="color:#f92672">::</span>length<span style="color:#f92672">);</span>
-</code></pre></div><p>In this case, if we use <code>flatMap</code> instead:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Optional<span style="color:#f92672">&lt;</span>Hero<span style="color:#f92672">&gt;</span> heroOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Hero<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">));</span>
-Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> heroOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">flatMap</span><span style="color:#f92672">(</span>Hero<span style="color:#f92672">::</span>getName<span style="color:#f92672">);</span>
-Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> nameLengthOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>String<span style="color:#f92672">::</span>length<span style="color:#f92672">);</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Hero<span style="color:#f92672">&gt;</span> heroOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Hero<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;&gt;</span> nameOptionalWrapper <span style="color:#f92672">=</span> heroOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>Hero<span style="color:#f92672">::</span>getName<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> nameOptionalWrapper<span style="color:#f92672">.</span><span style="color:#a6e22e">orElse</span><span style="color:#f92672">(</span>Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> nameLengthOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>String<span style="color:#f92672">::</span>length<span style="color:#f92672">);</span>
+</span></span></code></pre></div><p>In this case, if we use <code>flatMap</code> instead:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Hero<span style="color:#f92672">&gt;</span> heroOptional <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Hero<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameOptional <span style="color:#f92672">=</span> heroOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">flatMap</span><span style="color:#f92672">(</span>Hero<span style="color:#f92672">::</span>getName<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> nameLengthOptional <span style="color:#f92672">=</span> nameOptional<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>String<span style="color:#f92672">::</span>length<span style="color:#f92672">);</span>
+</span></span></code></pre></div></li>
 <li>
 <p><strong>Java 9</strong> introduced <code>Optional.stream()</code> method.
 It treats optional instance as a <code>Stream</code>.
 So we can use various <code>Stream API</code> functionality for optional, such as <em>collect</em>, <em>map</em>, <em>filter</em>, <em>flatMap</em> etc.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameList <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">());</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> nameList <span style="color:#f92672">=</span> Optional<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Altair&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">().</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">());</span>
+</span></span></code></pre></div></li>
 </ul>
 </li>
 </ul>
