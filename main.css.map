@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/Users/fahim/workspace/next_step/FahimSalamChowdhury",
+	"sourceRoot": "/home/fahim/workspace/next_step/FahimSalamChowdhury",
 	"sources": [
 		"themes/hello-friend-ng/assets/scss/main.scss",
 		"themes/hello-friend-ng/assets/scss/_normalize.scss",
