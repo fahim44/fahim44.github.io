@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gestures on Fahim Salam Chowdhury</title>
+    <link>https://fahim44.github.io/tags/gestures/</link>
+    <description>Recent content in gestures on Fahim Salam Chowdhury</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Aug 2022 17:54:21 +0600</lastBuildDate><atom:link href="https://fahim44.github.io/tags/gestures/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My linux gestures</title>
+      <link>https://fahim44.github.io/posts/2022/08/my-linux-gestures/</link>
+      <pubDate>Sun, 21 Aug 2022 17:54:21 +0600</pubDate>
+      
+      <guid>https://fahim44.github.io/posts/2022/08/my-linux-gestures/</guid>
+      <description>Around 2 years ago, I switched to macos as my primary operating system, to check what&amp;rsquo;s the hype. I found out the os is solid, but can&amp;rsquo;t find anything espcical which I can&amp;rsquo;t replicate in any linux os. Couple of months ago, I switched back to linux as my mac machine bites to dust. Nothing much bothers me this time, because in 2 years I tried to use cross-platform (&amp;amp; open sourced) apps as much possible.</description>
+    </item>
+    
+  </channel>
+</rss>
