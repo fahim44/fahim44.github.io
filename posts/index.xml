@@ -110,32 +110,32 @@ I am planning to manage my libinput fork directory regularly.</p>
             <pubDate>Fri, 13 May 2022 22:37:09 +0600</pubDate>
             
             <guid>https://fahim44.github.io/posts/2022/05/computer-program/</guid>
-            <description>A Computer Program is a sequence of instructions in a programing language which can a computer system can execute or interpret.
-When we engineer/programmer/developer write any program in any programing language of our choice, we actually write in very human-readable language. This is called source code. We can understand whan source code is saying; but the computer only knows binary, &amp;amp; it can only execute programs which is in machine instructions.</description>
-            <content type="html"><![CDATA[<p>A <em><strong>Computer Program</strong></em> is a sequence of instructions in a <em>programing language</em> which can a computer system can execute or interpret.</p>
-<p>When we engineer/programmer/developer write any program in any programing language of our choice, we actually write in very human-readable language.
+            <description>A Computer Program is a sequence of instructions written in a programing language which can be executed or interpreted in a computer system.
+When we engineers/programmers/developers write any program in any programing language of our choice, we actually write in very human-readable language. This is called source code. We can understand what source code is describing; but the computer only knows binary, &amp;amp; it can only execute programs which is written in machine instructions.</description>
+            <content type="html"><![CDATA[<p>A <em><strong>Computer Program</strong></em> is a sequence of instructions written in a <em>programing language</em> which can be executed or interpreted in a computer system.</p>
+<p>When we engineers/programmers/developers write any program in any programing language of our choice, we actually write in very human-readable language.
 This is called source code.
-We can understand whan source code is saying; but the computer only knows binary, &amp; it can only execute programs which is in machine instructions.</p>
+We can understand what source code is describing; but the computer only knows binary, &amp; it can only execute programs which is written in machine instructions.</p>
 <h2 id="instruction-set-architecture-isa">Instruction Set Architecture (ISA)</h2>
 <p>Suppose we have loaded two integer values into <code>a</code> &amp; <code>b</code> addresses of computer memory.
 Now you want to add their values &amp; save the result into <code>c</code> memory address.
 Only the central processing unit AKA <em><strong>CPU</strong></em> has the power to do the adding by using the arithmetic logic unit AKA <em><strong>ALU</strong></em>.
 But how do you let cpu know to do the operation?
-On over the top, if you have intel cpu in one machine &amp; amd cpu on another; they can execute same operation differently according to their architecture.</p>
+On the top of it, if you have intel cpu in one machine &amp; amd cpu on another; they can execute same operation differently according to their architecture.</p>
 <p>Here the intruction set architecture (ISA) comes to rescue. ISA provides an abstruction layer which cpu can read, decode, understand the command &amp; execute it.
 ISA defines <em><strong>Instructions</strong></em>, which are <em>binary string</em> with a pre-define structure.
-Every instruction has <em>opcode</em> (Operation code) on its begining, by reading this cpu can understand what operation it should perform.
+Every instruction has <em>opcode</em> (Operation code) at its begining, by reading this cpu can understand what operation it should perform.
 After the opcode follow supporting data/memory address which cpu may need to complete the operation (It is also pre-defined for specific opcode).</p>
 <p>For example, lets say for our machine ISA, the specified opcode length is 6; &amp; the addition instruction opcode is <code>000001</code>. &amp; for addition instruction, we also need provide <em>first param&rsquo;s memory address</em>, <em>second param&rsquo;s memory address</em>, <em>to save the result memory address</em> in order. Lets assume the address value of <code>a</code>, <code>b</code> &amp; <code>c</code> are <code>1122</code>, <code>3456</code>, <code>9976</code>.
 So the instruction for it will be,</p>
 <pre tabindex="0"><code class="language-bin" data-lang="bin">000001112234569976
 </code></pre><p>This instruction is loaded on the memory &amp; process triggered, so that cpu can look at it.
-CPU will read the instruction &amp; understand what we want to do, add <code>a</code> &amp; <code>b</code>&rsquo;s value &amp; save the result in <code>c</code> address.</p>
+CPU will read the instruction &amp; understand what we want to do, add <code>a</code> &amp; <code>b</code>s&rsquo; values &amp; save the result in <code>c</code> address.</p>
 <p>There are various types of ISA.
 A cpu can implement an ISA for its operations.
 A common classification of ISA is by architectural complexity.
 Some well known ISA are, complex instruction set computer AKA <em><strong>CISC</strong></em>, reduced instruction set computer AKA <em><strong>RISC</strong></em>, minimal instruction set computer AKA <em><strong>MISC</strong></em>.</p>
-<p>Although machine instructions are only way to execute the computer program, it is near impossible for us humen to always write the program in all binary intructions.
+<p>Although machine instructions are only way to execute the computer program, it is near to impossible for us humen to write complex programs in all binary intructions.
 To make it more convenient for us, the progamming language comes in.
 Programming languages add more abstraction layers over the ISA to make the process more easier.
 There are mainly two types of programming languages, low-level, high-level programming languages.</p>
