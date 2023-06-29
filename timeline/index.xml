@@ -4,7 +4,7 @@
         <link>https://fahim44.github.io/timeline/</link>
         <description>Recent content in Timeline on Fahim Salam Chowdhury</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
+        <language>en</language>
         <lastBuildDate>Fri, 25 Dec 2020 17:14:32 +0600</lastBuildDate>
         <atom:link href="https://fahim44.github.io/timeline/index.xml" rel="self" type="application/rss+xml" />
         
@@ -116,17 +116,17 @@ In Rokomari, I am working as a team member of the software development team. Her
         
         <item>
             <title>Software Engineer (Part time)</title>
-            <link>https://fahim44.github.io/timeline/e_parttime/</link>
+            <link>https://fahim44.github.io/timeline/murena_parttime/</link>
             <pubDate>Wed, 16 Dec 2020 20:52:07 +0600</pubDate>
             
-            <guid>https://fahim44.github.io/timeline/e_parttime/</guid>
-            <description>/e/ develops open-sourced, privacy-centric android eco-system. They builds mobile operating systems, apps and code that put users&amp;rsquo; privacy first before profit. They also sell Murena smartphones which is prebundled with /e/os. They also offer ecloud online services. The code base can be found in here. /e/ is based on France.
-In /e/ my responsibilities were,
-Revamp os default apps&amp;rsquo; UI Implement dark-mode for default apps </description>
-            <content type="html"><![CDATA[<p><a href="https://e.foundation/">/e/</a> develops open-sourced, privacy-centric android eco-system. They builds mobile operating systems, apps and code that put users&rsquo; privacy first before profit. They also sell <a href="https://esolutions.shop/">Murena smartphones</a> which is prebundled with /e/os. They also offer <a href="https://e.foundation/ecloud/">ecloud</a> online services. The code base can be found in <a href="https://gitlab.e.foundation/">here</a>. /e/ is based on France.</p>
-<p>In /e/ my responsibilities were,</p>
+            <guid>https://fahim44.github.io/timeline/murena_parttime/</guid>
+            <description>Murena is the main contributor of /e/OS development. They also provide Murena cloud. /e/OS is open-sourced, privacy-centric android mobile os based on LineageOS.
+As Android app developer, my responsibilities were,
+Revamp /e/OS default apps&amp;rsquo; UI Implement dark-mode for default apps </description>
+            <content type="html"><![CDATA[<p><a href="https://murena.com/">Murena</a> is the main contributor of <a href="https://e.foundation/">/e/OS</a> development. They also provide <a href="https://murena.io/">Murena cloud</a>. /e/OS is open-sourced, privacy-centric android mobile os based on <a href="https://lineageos.org/">LineageOS</a>.</p>
+<p>As Android app developer, my responsibilities were,</p>
 <ul>
-<li>Revamp os default apps&rsquo; UI</li>
+<li>Revamp /e/OS default apps&rsquo; UI</li>
 <li>Implement dark-mode for default apps</li>
 </ul>
 ]]></content>
@@ -134,18 +134,38 @@ Revamp os default apps&amp;rsquo; UI Implement dark-mode for default apps </desc
         
         <item>
             <title>Software Engineer</title>
-            <link>https://fahim44.github.io/timeline/e/</link>
+            <link>https://fahim44.github.io/timeline/murena/</link>
             <pubDate>Wed, 16 Dec 2020 20:52:07 +0600</pubDate>
             
-            <guid>https://fahim44.github.io/timeline/e/</guid>
-            <description>/e/ develops open-sourced, privacy-centric android eco-system. They builds mobile operating systems, apps and code that put users&amp;rsquo; privacy first before profit. They also sell Murena smartphones which is prebundled with /e/os. They also offer ecloud online services. The code base can be found in here. /e/ is based on France.
-In /e/ my responsibilities are,
-Maintain default apps Implement new features for default apps &amp;amp; /e/OS </description>
-            <content type="html"><![CDATA[<p><a href="https://e.foundation/">/e/</a> develops open-sourced, privacy-centric android eco-system. They builds mobile operating systems, apps and code that put users&rsquo; privacy first before profit. They also sell <a href="https://esolutions.shop/">Murena smartphones</a> which is prebundled with /e/os. They also offer <a href="https://e.foundation/ecloud/">ecloud</a> online services. The code base can be found in <a href="https://gitlab.e.foundation/">here</a>. /e/ is based on France.</p>
-<p>In /e/ my responsibilities are,</p>
+            <guid>https://fahim44.github.io/timeline/murena/</guid>
+            <description>Murena is the main contributor of /e/OS development. They also provide Murena cloud. /e/OS is open-sourced, privacy-centric android mobile os based on LineageOS.
+As Android app developer, my responsibilities are,
+Maintain &amp;amp; implement features which assure seamless account sync and maintenance for murena and others (ex: google, yahoo etc) account inside /e/OS. Maintain default applications(ex: Mail, Account Manager, Notes, Tasks, Calendar, eDrive, App Lounge, Camera, Contacts etc). Automate android app test, build, deploy, update with upstream tasks using Gitlab CI.</description>
+            <content type="html"><![CDATA[<p><a href="https://murena.com/">Murena</a> is the main contributor of <a href="https://e.foundation/">/e/OS</a> development. They also provide <a href="https://murena.io/">Murena cloud</a>. /e/OS is open-sourced, privacy-centric android mobile os based on <a href="https://lineageos.org/">LineageOS</a>.</p>
+<p>As Android app developer, my responsibilities are,</p>
 <ul>
-<li>Maintain default apps</li>
-<li>Implement new features for default apps &amp; /e/OS</li>
+<li>Maintain &amp; implement features which assure seamless account sync and maintenance for murena and others (ex: google, yahoo etc) account inside /e/OS.</li>
+<li>Maintain default applications(ex: <a href="https://gitlab.e.foundation/e/os/mail">Mail</a>, <a href="https://gitlab.e.foundation/e/os/AccountManager">Account Manager</a>, <a href="https://gitlab.e.foundation/e/os/Notes">Notes</a>, <a href="https://gitlab.e.foundation/e/os/Tasks">Tasks</a>, <a href="https://gitlab.e.foundation/e/os/android_packages_apps_Etar">Calendar</a>, <a href="https://gitlab.e.foundation/e/os/eDrive">eDrive</a>, <a href="https://gitlab.e.foundation/e/os/apps">App Lounge</a>, <a href="https://gitlab.e.foundation/e/os/camera">Camera</a>, <a href="https://gitlab.e.foundation/e/os/android_packages_apps_Contacts">Contacts</a> etc).</li>
+<li>Automate android app test, build, deploy, update with upstream tasks using Gitlab CI.</li>
+<li>Implement E2EE feature for over <a href="https://gitlab.e.foundation/dapsi-e2ee/nextcloud-notes">Nextcloud Notes app</a> for <a href="https://dapsi.ngi.eu/hall-of-fame/4e-end-to-end-encryption-for-e/">DAPSI Project</a>.</li>
+<li>Simplified Mail&rsquo;s openPGP encryption user experience.</li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Software Engineer (Part time)</title>
+            <link>https://fahim44.github.io/timeline/ambi_partime/</link>
+            <pubDate>Thu, 29 Jun 2023 19:09:59 +0600</pubDate>
+            
+            <guid>https://fahim44.github.io/timeline/ambi_partime/</guid>
+            <description>To improve the sleep health of as many individuals as possible, and as a result, greatly enhancing the QOL of humanity, Ambi provides sleep tracking related products.
+At Ambi, I work as a backend Engineer. My responsibilities are,
+Implement and Maintain micro-service backend in Go (echo framework) for sleep tracking product. </description>
+            <content type="html"><![CDATA[<p>To improve the sleep health of as many individuals as possible, and as a result, greatly enhancing the QOL of humanity, <a href="https://ambi.jp/">Ambi</a> provides sleep tracking related products.</p>
+<p>At Ambi, I work as a backend Engineer. My responsibilities are,</p>
+<ul>
+<li>Implement and Maintain micro-service backend in Go (echo framework) for sleep tracking product.</li>
 </ul>
 ]]></content>
         </item>
