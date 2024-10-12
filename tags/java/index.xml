@@ -6,16 +6,14 @@
     <description>Recent content in java on Fahim Salam Chowdhury</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 01 Jan 2021 18:09:06 +0600</lastBuildDate><atom:link href="https://fahim44.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Jan 2021 18:09:06 +0600</lastBuildDate>
+    <atom:link href="https://fahim44.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Optional in Java</title>
       <link>https://fahim44.github.io/posts/2021/01/optional-in-java/</link>
       <pubDate>Fri, 01 Jan 2021 18:09:06 +0600</pubDate>
-      
       <guid>https://fahim44.github.io/posts/2021/01/optional-in-java/</guid>
-      <description>Java 8 has some cool features introduced on it&amp;rsquo;s release, for example, lamda, method reference etc. One of the major features is Optional. Today, we will discuss what optional is, why it is introduced &amp;amp; basic use case of it.
-The Billion Dollar Mistake Tony Hoare, developer of quicksort algorithm, invented null reference in 1965. In 2009, he described it as a Billion Dollar Mistake &amp;amp; apologized for inventing it. Now what is Null Reference &amp;amp; why is it called The Billion Dollar Mistake?</description>
+      <description>Java 8 has some cool features introduced on it&amp;rsquo;s release, for example, lamda, method reference etc. One of the major features is Optional. Today, we will discuss what optional is, why it is introduced &amp;amp; basic use case of it.&#xA;The Billion Dollar Mistake Tony Hoare, developer of quicksort algorithm, invented null reference in 1965. In 2009, he described it as a Billion Dollar Mistake &amp;amp; apologized for inventing it. Now what is Null Reference &amp;amp; why is it called The Billion Dollar Mistake?</description>
     </item>
-    
   </channel>
 </rss>

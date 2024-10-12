@@ -6,38 +6,28 @@
     <description>Recent content in database on Fahim Salam Chowdhury</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 25 Jun 2021 22:10:08 +0600</lastBuildDate><atom:link href="https://fahim44.github.io/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Jun 2021 22:10:08 +0600</lastBuildDate>
+    <atom:link href="https://fahim44.github.io/tags/database/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Theorem of C.A.P</title>
       <link>https://fahim44.github.io/posts/2021/06/theorem-of-c.a.p/</link>
       <pubDate>Fri, 25 Jun 2021 22:10:08 +0600</pubDate>
-      
       <guid>https://fahim44.github.io/posts/2021/06/theorem-of-c.a.p/</guid>
-      <description>The CAP (consistency, availability, partition tolerance) theorem is also known as Brewer’s Theorem which is named after computer scientist Professor Eric A. Brewer . It is a theorem regarding Distributed Database System first advanced by Professor Brewer during a talk on distributed system in 2000.
-Before jumping to the actual theorem, start first check out some key words.
-Distributed system In basic terms, A distributed system is a network of multiple nodes which work as a single node.</description>
+      <description>The CAP (consistency, availability, partition tolerance) theorem is also known as Brewer’s Theorem which is named after computer scientist Professor Eric A. Brewer . It is a theorem regarding Distributed Database System first advanced by Professor Brewer during a talk on distributed system in 2000.&#xA;Before jumping to the actual theorem, start first check out some key words.&#xA;Distributed system In basic terms, A distributed system is a network of multiple nodes which work as a single node.</description>
     </item>
-    
     <item>
       <title>A.C.I.D.ity in database</title>
       <link>https://fahim44.github.io/posts/2021/05/a.c.i.d.ity-in-database/</link>
       <pubDate>Sun, 02 May 2021 00:04:34 +0600</pubDate>
-      
       <guid>https://fahim44.github.io/posts/2021/05/a.c.i.d.ity-in-database/</guid>
-      <description>Atomicity, Consistency, Isolation, Durability (aka: ACID) are the properties of database transactions. These properties describe the data validity of any condition.
-Transaction Database Transaction means single or multiple related database operations executing sequencially which is counted as a single database unit; which guarantees data durability, consistency. For example, on any e-commerance website, if you place an order, an row is created against your account in order table, the available item count decrease for the ordered item from the item.</description>
+      <description>Atomicity, Consistency, Isolation, Durability (aka: ACID) are the properties of database transactions. These properties describe the data validity of any condition.&#xA;Transaction Database Transaction means single or multiple related database operations executing sequencially which is counted as a single database unit; which guarantees data durability, consistency. For example, on any e-commerance website, if you place an order, an row is created against your account in order table, the available item count decrease for the ordered item from the item.</description>
     </item>
-    
     <item>
       <title>mysql in docker</title>
       <link>https://fahim44.github.io/posts/2021/01/mysql-in-docker/</link>
       <pubDate>Thu, 14 Jan 2021 21:55:03 +0600</pubDate>
-      
       <guid>https://fahim44.github.io/posts/2021/01/mysql-in-docker/</guid>
-      <description>In this post, we will discuss how to setup &amp;amp; run mysql using docker
-Goal We want to setup mysql using docker, but also want to provide our custom configurations for mysql and save mysql data into our machine. The reason of choosing docker over direct mysql installation into the machine is, we want to switch between mysql hosting machines with ease &amp;amp; start-stop mysql into our macine easily.
-Prerequisite Docker &amp;amp; Docker-compose should already be setup into your machine beforehand.</description>
+      <description>In this post, we will discuss how to setup &amp;amp; run mysql using docker&#xA;Goal We want to setup mysql using docker, but also want to provide our custom configurations for mysql and save mysql data into our machine. The reason of choosing docker over direct mysql installation into the machine is, we want to switch between mysql hosting machines with ease &amp;amp; start-stop mysql into our macine easily.&#xA;Prerequisite Docker &amp;amp; Docker-compose should already be setup into your machine beforehand.</description>
     </item>
-    
   </channel>
 </rss>

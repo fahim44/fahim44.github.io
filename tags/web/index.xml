@@ -6,17 +6,14 @@
     <description>Recent content in web on Fahim Salam Chowdhury</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Mar 2021 22:56:59 +0600</lastBuildDate><atom:link href="https://fahim44.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Mar 2021 22:56:59 +0600</lastBuildDate>
+    <atom:link href="https://fahim44.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Http request methods</title>
       <link>https://fahim44.github.io/posts/2021/03/http-request-methods/</link>
       <pubDate>Fri, 26 Mar 2021 22:56:59 +0600</pubDate>
-      
       <guid>https://fahim44.github.io/posts/2021/03/http-request-methods/</guid>
-      <description>To indicate what action should be taken on a Resource, HTTP provides some pre-defined Request Methods. Because of reffering actions, thses methods are sometimes reffered as HTTP verbs.
-Features of HTTP Methods Although they are semantically difference, HTTP Methods share some common features/quality among them.
-Safe An Http method is called safe, if it doesn&amp;rsquo;t change any server state. Meaning, if the Http method&amp;rsquo;s main operation is read-only, then the method is safe.</description>
+      <description>To indicate what action should be taken on a Resource, HTTP provides some pre-defined Request Methods. Because of reffering actions, thses methods are sometimes reffered as HTTP verbs.&#xA;Features of HTTP Methods Although they are semantically difference, HTTP Methods share some common features/quality among them.&#xA;Safe An Http method is called safe, if it doesn&amp;rsquo;t change any server state. Meaning, if the Http method&amp;rsquo;s main operation is read-only, then the method is safe.</description>
     </item>
-    
   </channel>
 </rss>

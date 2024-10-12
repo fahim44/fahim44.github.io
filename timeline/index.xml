@@ -115,7 +115,7 @@ In Rokomari, I am working as a team member of the software development team. Her
         </item>
         
         <item>
-            <title>Software Engineer (Part time)</title>
+            <title>Software Engineer - Android (Part time)</title>
             <link>https://fahim44.github.io/timeline/murena_parttime/</link>
             <pubDate>Wed, 16 Dec 2020 20:52:07 +0600</pubDate>
             
@@ -133,22 +133,23 @@ Revamp /e/OS default apps&amp;rsquo; UI Implement dark-mode for default apps </d
         </item>
         
         <item>
-            <title>Software Engineer</title>
-            <link>https://fahim44.github.io/timeline/murena/</link>
+            <title>Software Engineer - Android</title>
+            <link>https://fahim44.github.io/timeline/murena_android/</link>
             <pubDate>Wed, 16 Dec 2020 20:52:07 +0600</pubDate>
             
-            <guid>https://fahim44.github.io/timeline/murena/</guid>
+            <guid>https://fahim44.github.io/timeline/murena_android/</guid>
             <description>Murena is the main contributor of /e/OS development. They also provide Murena cloud. /e/OS is open-sourced, privacy-centric android mobile os based on LineageOS.
-As Android app developer, my responsibilities are,
+As Android app developer, my responsibilities were,
 Maintain &amp;amp; implement features which assure seamless account sync and maintenance for murena and others (ex: google, yahoo etc) account inside /e/OS. Maintain default applications(ex: Mail, Account Manager, Notes, Tasks, Calendar, eDrive, App Lounge, Camera, Contacts etc). Automate android app test, build, deploy, update with upstream tasks using Gitlab CI.</description>
             <content type="html"><![CDATA[<p><a href="https://murena.com/">Murena</a> is the main contributor of <a href="https://e.foundation/">/e/OS</a> development. They also provide <a href="https://murena.io/">Murena cloud</a>. /e/OS is open-sourced, privacy-centric android mobile os based on <a href="https://lineageos.org/">LineageOS</a>.</p>
-<p>As Android app developer, my responsibilities are,</p>
+<p>As Android app developer, my responsibilities were,</p>
 <ul>
 <li>Maintain &amp; implement features which assure seamless account sync and maintenance for murena and others (ex: google, yahoo etc) account inside /e/OS.</li>
 <li>Maintain default applications(ex: <a href="https://gitlab.e.foundation/e/os/mail">Mail</a>, <a href="https://gitlab.e.foundation/e/os/AccountManager">Account Manager</a>, <a href="https://gitlab.e.foundation/e/os/Notes">Notes</a>, <a href="https://gitlab.e.foundation/e/os/Tasks">Tasks</a>, <a href="https://gitlab.e.foundation/e/os/android_packages_apps_Etar">Calendar</a>, <a href="https://gitlab.e.foundation/e/os/eDrive">eDrive</a>, <a href="https://gitlab.e.foundation/e/os/apps">App Lounge</a>, <a href="https://gitlab.e.foundation/e/os/camera">Camera</a>, <a href="https://gitlab.e.foundation/e/os/android_packages_apps_Contacts">Contacts</a> etc).</li>
 <li>Automate android app test, build, deploy, update with upstream tasks using Gitlab CI.</li>
 <li>Implement E2EE feature for over <a href="https://gitlab.e.foundation/dapsi-e2ee/nextcloud-notes">Nextcloud Notes app</a> for <a href="https://dapsi.ngi.eu/hall-of-fame/4e-end-to-end-encryption-for-e/">DAPSI Project</a>.</li>
 <li>Simplified Mail&rsquo;s openPGP encryption user experience.</li>
+<li>Implement OpenId-Connect &amp; Single-SingOn support for /e/OS agaisnt various providers (ex: murena, google, yahoo).</li>
 </ul>
 ]]></content>
         </item>
@@ -166,6 +167,27 @@ Implement and Maintain micro-service backend in Go (echo framework) for sleep tr
 <p>At Ambi, I work as a backend Engineer. My responsibilities are,</p>
 <ul>
 <li>Implement and Maintain micro-service backend in Go (echo framework) for sleep tracking product.</li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Software Engineer - Backend</title>
+            <link>https://fahim44.github.io/timeline/murena_backend/</link>
+            <pubDate>Wed, 16 Dec 2020 20:52:07 +0600</pubDate>
+            
+            <guid>https://fahim44.github.io/timeline/murena_backend/</guid>
+            <description>murena.io is a cloud provider witch is build around mostly free &amp;amp; open-sourced solutions (ex: Nextcloud). Murena focuses on providing privacy-centric cloud &amp;amp; office solutions for general users &amp;amp; businesses. Murena also provides other solutions like spot: meta-search engine, cleanApk: for android app stores etc, which improve the /e/OS experience.
+As backend software engineer, my responsibilities are,
+Maintain &amp;amp; implement features for murena.io &amp;amp; it&amp;rsquo;s supported applications. Maintain spot, cleanApk etc applications which improve /e/OS user experience.</description>
+            <content type="html"><![CDATA[<p><a href="https://murena.io/">murena.io</a> is a cloud provider witch is build around mostly free &amp; open-sourced solutions (ex: <a href="https://nextcloud.com/">Nextcloud</a>).
+Murena focuses on providing privacy-centric cloud &amp; office solutions for general users &amp; businesses.
+Murena also provides other solutions like <a href="https://spot.murena.io/">spot: meta-search engine</a>, <a href="https://api.cleanapk.org/">cleanApk: for android app stores</a> etc, which improve the /e/OS experience.</p>
+<p>As backend software engineer, my responsibilities are,</p>
+<ul>
+<li>Maintain &amp; implement features for murena.io &amp; it&rsquo;s supported applications.</li>
+<li>Maintain spot, cleanApk etc applications which improve /e/OS user experience.</li>
+<li>Contribute back to various murena&rsquo;s upstream projects (ex: <a href="https://github.com/the-djmaze/snappymail/">snappyMail</a>).</li>
 </ul>
 ]]></content>
         </item>
