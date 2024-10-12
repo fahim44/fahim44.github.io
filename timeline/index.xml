@@ -29,7 +29,7 @@ My final cgpa: 2.99 (out of 4)</description>
             <guid>https://fahim44.github.io/timeline/softwindtech/</guid>
             <description>Softwind Tech Ltd. is well known for their digital marketing services. They also provide various interactive web, game, mobile application solutions to their customers to boost their marketing.
 In Softwind Tech, I had the position of junior software engineer. Here, I had developed applications for android, windows universal platform, ios (using xamarin framework). In that period, my major achievements are,
-Created and maintained project schedule and acted as liaison between business, QA and development team Developed application in shortest amount of time Developed applications for android, ios, windows phone Worked with a team of 3 high performing engineers </description>
+Created and maintained project schedule and acted as liaison between business, QA and development team Developed application in shortest amount of time Developed applications for android, ios, windows phone Worked with a team of 3 high performing engineers Technologies:</description>
             <content type="html"><![CDATA[<p><a href="https://www.softwindtech.com/">Softwind Tech Ltd.</a> is well known for their digital marketing services. They also provide various interactive web, game, mobile application solutions to their customers to boost their marketing.</p>
 <p>In Softwind Tech, I had the position of junior software engineer. Here, I had developed applications for android, windows universal platform, ios (using xamarin framework). In that period, my major achievements are,</p>
 <ul>
@@ -37,6 +37,15 @@ Created and maintained project schedule and acted as liaison between business, Q
 <li>Developed application in shortest amount of time</li>
 <li>Developed applications for android, ios, windows phone</li>
 <li>Worked with a team of 3 high performing engineers</li>
+</ul>
+<p>Technologies:</p>
+<ul>
+<li>Android</li>
+<li>Windows phone application development</li>
+<li>Java</li>
+<li>C#</li>
+<li>Javascript</li>
+<li>Git</li>
 </ul>
 ]]></content>
         </item>
@@ -49,7 +58,7 @@ Created and maintained project schedule and acted as liaison between business, Q
             <guid>https://fahim44.github.io/timeline/frenclub/</guid>
             <description>Frenclub Mobile Ltd. develops social media and productivity applications for Chinese, Malaysian, Indonesian market. They are well known for their VAS services.
 In Frenclub Mobile Ltd., I have worked as Software Engineer. I have developed and maintained their various chat-based android applications. My key responsibilities were,
-Created and maintained technical documentation and acted as liaison between QA and development team led a team of 3 high performing engineers Improved code stability and application security Implemented in-app purchase system Gained performance boost by 3x Developed applications used by thousands </description>
+Created and maintained technical documentation and acted as liaison between QA and development team led a team of 3 high performing engineers Improved code stability and application security Implemented in-app purchase system Gained performance boost by 3x Developed applications used by thousands Technologies:</description>
             <content type="html"><![CDATA[<p><a href="http://frenclub.com/welcome/">Frenclub Mobile Ltd.</a> develops social media and productivity applications for Chinese, Malaysian, Indonesian market. They are well known for their VAS services.</p>
 <p>In Frenclub Mobile Ltd., I have worked as Software Engineer. I have developed and maintained their various chat-based android applications. My key responsibilities were,</p>
 <ul>
@@ -59,6 +68,12 @@ Created and maintained technical documentation and acted as liaison between QA a
 <li>Implemented in-app purchase system</li>
 <li>Gained performance boost by 3x</li>
 <li>Developed applications used by thousands</li>
+</ul>
+<p>Technologies:</p>
+<ul>
+<li>Android</li>
+<li>Java</li>
+<li>Git</li>
 </ul>
 ]]></content>
         </item>
@@ -92,6 +107,15 @@ In DailyGoods Ltd., I served as software engineer - team lead. I have lead the t
 <li>Distribute tasks among the team</li>
 <li>Design scale-able architecture of various projects</li>
 </ul>
+<p>Technologies:</p>
+<ul>
+<li>Microservice architecture</li>
+<li>Spring boot</li>
+<li>Vaadin framework</li>
+<li>socket connectivity</li>
+<li>Java</li>
+<li>Android</li>
+</ul>
 ]]></content>
         </item>
         
@@ -111,6 +135,20 @@ In Rokomari, I am working as a team member of the software development team. Her
 <li>Guide other developers on verious architure related topics</li>
 <li>Plan and fix company&rsquo;s application development lifecycle (code convention, git maintainace etc.)</li>
 </ul>
+<p>Technologies:</p>
+<ul>
+<li>Spring framework</li>
+<li>Spring boot</li>
+<li>Flutter</li>
+<li>Mysql</li>
+<li>MongoDB</li>
+<li>Monoliphic architure</li>
+<li>Microservice architure</li>
+<li>Java</li>
+<li>Kotlin</li>
+<li>Dart</li>
+<li>Gitlab</li>
+</ul>
 ]]></content>
         </item>
         
@@ -122,12 +160,18 @@ In Rokomari, I am working as a team member of the software development team. Her
             <guid>https://fahim44.github.io/timeline/murena_parttime/</guid>
             <description>Murena is the main contributor of /e/OS development. They also provide Murena cloud. /e/OS is open-sourced, privacy-centric android mobile os based on LineageOS.
 As Android app developer, my responsibilities were,
-Revamp /e/OS default apps&amp;rsquo; UI Implement dark-mode for default apps </description>
+Revamp /e/OS default apps&amp;rsquo; UI Implement dark-mode for default apps Technologies:
+Android Gitlab CI-CD </description>
             <content type="html"><![CDATA[<p><a href="https://murena.com/">Murena</a> is the main contributor of <a href="https://e.foundation/">/e/OS</a> development. They also provide <a href="https://murena.io/">Murena cloud</a>. /e/OS is open-sourced, privacy-centric android mobile os based on <a href="https://lineageos.org/">LineageOS</a>.</p>
 <p>As Android app developer, my responsibilities were,</p>
 <ul>
 <li>Revamp /e/OS default apps&rsquo; UI</li>
 <li>Implement dark-mode for default apps</li>
+</ul>
+<p>Technologies:</p>
+<ul>
+<li>Android</li>
+<li>Gitlab CI-CD</li>
 </ul>
 ]]></content>
         </item>
@@ -151,6 +195,12 @@ Maintain &amp;amp; implement features which assure seamless account sync and mai
 <li>Simplified Mail&rsquo;s openPGP encryption user experience.</li>
 <li>Implement OpenId-Connect &amp; Single-SingOn support for /e/OS agaisnt various providers (ex: murena, google, yahoo).</li>
 </ul>
+<p>Technologies:</p>
+<ul>
+<li>Android</li>
+<li>Android Jetpack compose</li>
+<li>Gitlab CI-CD</li>
+</ul>
 ]]></content>
         </item>
         
@@ -161,12 +211,25 @@ Maintain &amp;amp; implement features which assure seamless account sync and mai
             
             <guid>https://fahim44.github.io/timeline/ambi_partime/</guid>
             <description>To improve the sleep health of as many individuals as possible, and as a result, greatly enhancing the QOL of humanity, Ambi provides sleep tracking related products.
-At Ambi, I work as a backend Engineer. My responsibilities are,
-Implement and Maintain micro-service backend in Go (echo framework) for sleep tracking product. </description>
+At Ambi, I work as a backend Engineer. My responsibilities were,
+Architect, Develop, Maintain micro-service backend in Go (echo framework) for sleep tracking product. Architect, Develop, Maintain Nerubank. Technologies:
+Micro-service architecture Echo framework (go) AWS DynamoDB MySQL Amazon SQS Android Android Jetpack compose </description>
             <content type="html"><![CDATA[<p>To improve the sleep health of as many individuals as possible, and as a result, greatly enhancing the QOL of humanity, <a href="https://ambi.jp/">Ambi</a> provides sleep tracking related products.</p>
-<p>At Ambi, I work as a backend Engineer. My responsibilities are,</p>
+<p>At Ambi, I work as a backend Engineer. My responsibilities were,</p>
 <ul>
-<li>Implement and Maintain micro-service backend in Go (echo framework) for sleep tracking product.</li>
+<li>Architect, Develop, Maintain micro-service backend in Go (echo framework) for sleep tracking product.</li>
+<li>Architect, Develop, Maintain <a href="https://play.google.com/store/apps/details?id=com.nerubank.app">Nerubank</a>.</li>
+</ul>
+<p>Technologies:</p>
+<ul>
+<li>Micro-service architecture</li>
+<li>Echo framework (go)</li>
+<li>AWS</li>
+<li>DynamoDB</li>
+<li>MySQL</li>
+<li>Amazon SQS</li>
+<li>Android</li>
+<li>Android Jetpack compose</li>
 </ul>
 ]]></content>
         </item>
@@ -188,6 +251,16 @@ Murena also provides other solutions like <a href="https://spot.murena.io/">spot
 <li>Maintain &amp; implement features for murena.io &amp; it&rsquo;s supported applications.</li>
 <li>Maintain spot, cleanApk etc applications which improve /e/OS user experience.</li>
 <li>Contribute back to various murena&rsquo;s upstream projects (ex: <a href="https://github.com/the-djmaze/snappymail/">snappyMail</a>).</li>
+</ul>
+<p>Technologies:</p>
+<ul>
+<li>Gitlab CI-CD</li>
+<li>Nextcloud</li>
+<li>PHP</li>
+<li>Python</li>
+<li>MongoDB</li>
+<li>Mysql</li>
+<li>Haproxy</li>
 </ul>
 ]]></content>
         </item>
